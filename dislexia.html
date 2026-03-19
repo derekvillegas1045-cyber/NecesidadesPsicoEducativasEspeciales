@@ -48,21 +48,308 @@
         <!-- Menú Móvil (Oculto por defecto) -->
         <div id="menu-movil" class="hidden md:hidden bg-white border-b border-slate-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
-                <a href="index.html#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
-                <a href="index.html#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
-                <a href="index.html#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
-                <a href="index.html#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
+                <a href="#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
+                <a href="#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
+                <a href="#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
+                <a href="#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
+                <a href="#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
+                <a href="#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
             </div>
         </div>
     </nav>
 
+    <!-- Juego de Letras y Sílabas -->
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Letras y Sílabas</title>
+  <style>
+    body { 
+      font-family: 'Arial', sans-serif; 
+      text-align: center; 
+      background-color: #f0f8ff; /* Un tono azul muy suave */
+      padding: 20px; 
+      color: #2c3e50;
+    }
+    
+    /* Controles de dificultad */
+    .dificultades { margin-bottom: 25px; }
+    .btn-dif {
+      padding: 10px 20px; margin: 0 5px; font-size: 16px; font-weight: bold; cursor: pointer;
+      border: 2px solid #bdc3c7; background: white; border-radius: 20px;
+      transition: all 0.3s; color: #7f8c8d;
+    }
+    .btn-dif:hover { border-color: #3498db; color: #3498db; }
+    .btn-dif.activa { background-color: #3498db; color: white; border-color: #2980b9; }
+
+    /* Textos guía y progreso */
+    .guia { font-size: 22px; color: #555; margin-bottom: 5px; font-weight: bold; }
+    .etapa-badge { 
+      display: inline-block; background: #e74c3c; color: white; 
+      padding: 5px 15px; border-radius: 15px; font-size: 14px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;
+    }
+    .palabra-objetivo { font-size: 48px; font-weight: bold; color: #2c3e50; margin-bottom: 20px; text-transform: uppercase; }
+    
+    #progreso { font-size: 30px; letter-spacing: 5px; color: #2980b9; min-height: 40px; font-weight: bold; margin-bottom: 20px;}
+
+    /* Botones de letras/sílabas */
+    .contenedor-letras { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    .letra-btn { 
+      padding: 15px 25px; font-size: 28px; cursor: pointer; 
+      border: 3px solid #3498db; background: white; border-radius: 10px;
+      transition: 0.3s; font-weight: bold; text-transform: uppercase; color: #2c3e50;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .letra-btn:active { transform: translateY(2px); box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+    .letra-btn.correcta { background-color: #2ecc71; border-color: #27ae60; color: white; box-shadow: none; transform: scale(0.95);}
+    
+    /* Mensajes y controles finales */
+    .mensaje { margin-top: 30px; font-size: 22px; color: #27ae60; font-weight: bold; height: 30px; }
+    .btn-siguiente { 
+      margin-top: 20px; padding: 12px 25px; font-size: 18px; font-weight: bold;
+      background: #f1c40f; border: 2px solid #f39c12; color: #d35400; border-radius: 8px; 
+      cursor: pointer; display: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s;
+    }
+    .btn-siguiente:hover { background: #f39c12; color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Selector de Dificultad -->
+  <div class="dificultades">
+    <button class="btn-dif activa" onclick="cambiarDificultad('facil')" id="btn-facil">Fácil</button>
+    <button class="btn-dif" onclick="cambiarDificultad('intermedio')" id="btn-intermedio">Intermedio</button>
+    <button class="btn-dif" onclick="cambiarDificultad('avanzado')" id="btn-avanzado">Avanzado</button>
+  </div>
+
+  <div class="guia">Mira la palabra:</div>
+  <div id="palabraGuia" class="palabra-objetivo">GATO</div>
+  
+  <div id="etapaBadge" class="etapa-badge">Etapa 1: Letras</div>
+  <div id="instruccion" class="guia">¡Ordena las letras!</div>
+  
+  <div id="progreso"></div>
+  
+  <div id="letrasContainer" class="contenedor-letras"></div>
+  
+  <div id="mensaje" class="mensaje"></div>
+  <button id="btnSiguiente" class="btn-siguiente" onclick="siguientePaso()">¡Acomodar sílabas! 🧩</button>
+
+  <script>
+    // Diccionario de palabras divididas por dificultad y con sus sílabas
+    const diccionario = {
+      facil: [ // Palabras cortas (2 sílabas, 4 letras aprox)
+        { palabra: "CASA", silabas: ["CA", "SA"] },
+        { palabra: "GATO", silabas: ["GA", "TO"] },
+        { palabra: "LUNA", silabas: ["LU", "NA"] },
+        { palabra: "PATO", silabas: ["PA", "TO"] }
+      ],
+      intermedio: [ // Palabras medianas (3 sílabas, 6 letras aprox)
+        { palabra: "PELOTA", silabas: ["PE", "LO", "TA"] },
+        { palabra: "CAMISA", silabas: ["CA", "MI", "SA"] },
+        { palabra: "TOMATE", silabas: ["TO", "MA", "TE"] },
+        { palabra: "ESCUELA", silabas: ["ES", "CUE", "LA"] }
+      ],
+      avanzado: [ // Palabras largas (4+ sílabas, 8+ letras)
+        { palabra: "MARIPOSA", silabas: ["MA", "RI", "PO", "SA"] },
+        { palabra: "ELEFANTE", silabas: ["E", "LE", "FAN", "TE"] },
+        { palabra: "MURCIELAGO", silabas: ["MUR", "CIE", "LA", "GO"] },
+        { palabra: "TELEVISION", silabas: ["TE", "LE", "VI", "SION"] }
+      ]
+    };
+    
+    // Variables de estado del juego
+    let dificultadActual = "facil";
+    let indicePalabra = 0;
+    let etapaActual = 1; // 1 = Letras, 2 = Sílabas
+    
+    let palabraActualInfo = null; // Guardará el objeto de la palabra actual
+    let elementosEsperados = [];  // Lo que el jugador debe armar (letras o sílabas)
+    let elementosArmados = [];    // Lo que el jugador ya ha hecho clic correctamente
+
+    // Función para cambiar de nivel desde los botones superiores
+    function cambiarDificultad(nivel) {
+      dificultadActual = nivel;
+      indicePalabra = 0;
+      etapaActual = 1;
+      
+      // Actualizar visualmente los botones
+      document.getElementById('btn-facil').classList.remove('activa');
+      document.getElementById('btn-intermedio').classList.remove('activa');
+      document.getElementById('btn-avanzado').classList.remove('activa');
+      document.getElementById('btn-' + nivel).classList.add('activa');
+      
+      iniciarEtapa();
+    }
+
+    // Prepara la pantalla para la etapa actual (letras o sílabas)
+    function iniciarEtapa() {
+      // Obtener la palabra según la dificultad y el índice
+      palabraActualInfo = diccionario[dificultadActual][indicePalabra];
+      elementosArmados = [];
+      
+      document.getElementById('palabraGuia').innerText = palabraActualInfo.palabra;
+      document.getElementById('mensaje').innerText = "";
+      document.getElementById('btnSiguiente').style.display = "none";
+      
+      // Configurar según si estamos en etapa de letras o sílabas
+      if (etapaActual === 1) {
+        document.getElementById('etapaBadge').innerText = "Etapa 1: Letras";
+        document.getElementById('etapaBadge').style.background = "#e74c3c"; // Rojo
+        document.getElementById('instruccion').innerText = "¡Ordena las letras!";
+        // Convertimos la palabra en un arreglo de letras ["G","A","T","O"]
+        elementosEsperados = palabraActualInfo.palabra.split('');
+      } else {
+        document.getElementById('etapaBadge').innerText = "Etapa 2: Sílabas";
+        document.getElementById('etapaBadge').style.background = "#8e44ad"; // Morado
+        document.getElementById('instruccion').innerText = "¡Ahora arma la palabra por sílabas!";
+        // Usamos el arreglo de sílabas ["GA", "TO"]
+        elementosEsperados = palabraActualInfo.silabas;
+      }
+      
+      actualizarProgreso();
+      
+      // Desordenar las letras o sílabas
+      let elementosDesordenados = [...elementosEsperados].sort(() => Math.random() - 0.5);
+      
+      const container = document.getElementById('letrasContainer');
+      container.innerHTML = "";
+      
+      // Crear botones
+      elementosDesordenados.forEach((elemento) => {
+        const btn = document.createElement('button');
+        btn.innerText = elemento;
+        btn.className = 'letra-btn';
+        btn.onclick = () => verificarElemento(elemento, btn);
+        container.appendChild(btn);
+      });
+    }
+
+    // Revisa si el botón que presionó el usuario es el correcto
+    function verificarElemento(elementoClicked, boton) {
+      // Sabemos qué elemento toca por el tamaño del arreglo armado
+      const indexActual = elementosArmados.length;
+      const elementoCorrecto = elementosEsperados[indexActual];
+      
+      if (elementoClicked === elementoCorrecto) {
+        // ¡Correcto!
+        elementosArmados.push(elementoClicked);
+        boton.classList.add('correcta');
+        boton.disabled = true;
+        actualizarProgreso();
+        
+        // Revisar si ya terminó todos los elementos
+        if (elementosArmados.length === elementosEsperados.length) {
+          document.getElementById('mensaje').innerText = "¡Muy bien! Lo lograste 🎉";
+          
+          let btnSiguiente = document.getElementById('btnSiguiente');
+          btnSiguiente.style.display = "inline-block";
+          
+          // Cambiar texto del botón final según la etapa
+          if (etapaActual === 1) {
+            btnSiguiente.innerText = "¡Acomodar sílabas! 🧩";
+          } else {
+            btnSiguiente.innerText = "¡Siguiente palabra! 🌟";
+          }
+        }
+      } else {
+        // Efecto de error (se pone rojo y vibra un poco)
+        boton.style.borderColor = "#e74c3c";
+        boton.style.color = "#e74c3c";
+        boton.style.transform = "translateX(5px)";
+        setTimeout(() => {
+          boton.style.borderColor = "#3498db";
+          boton.style.color = "#2c3e50";
+          boton.style.transform = "translateX(0)";
+        }, 400);
+      }
+    }
+
+    // Dibuja las rayitas "_ _ _" o las sílabas armadas en la pantalla
+    function actualizarProgreso() {
+      let display = "";
+      let faltantes = "";
+
+      if (etapaActual === 1) {
+        // Formato para letras: G A _ _
+        display = elementosArmados.join(' ');
+        if(elementosArmados.length > 0) display += " "; // Espacio extra si hay letras
+        faltantes = "_ ".repeat(elementosEsperados.length - elementosArmados.length);
+      } else {
+        // Formato para sílabas: GA - TO
+        display = elementosArmados.join(' - ');
+        if(elementosArmados.length > 0 && elementosArmados.length < elementosEsperados.length) {
+            display += " - "; 
+        }
+        faltantes = "___ ".repeat(elementosEsperados.length - elementosArmados.length);
+      }
+
+      document.getElementById('progreso').innerText = display + faltantes;
+    }
+
+    // Pasa a la etapa de sílabas o a la siguiente palabra
+    function siguientePaso() {
+      if (etapaActual === 1) {
+        // Pasar a etapa 2 (Sílabas)
+        etapaActual = 2;
+      } else {
+        // Terminó las sílabas, pasar a la siguiente palabra
+        etapaActual = 1;
+        indicePalabra++;
+        
+        // Si ya no hay palabras en esta dificultad, volver a empezar la lista
+        if (indicePalabra >= diccionario[dificultadActual].length) {
+          indicePalabra = 0; 
+        }
+      }
+      iniciarEtapa();
+    }
+
+    // Iniciar el juego la primera vez que carga la página
+    iniciarEtapa();
+  </script>
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center">
+                    <i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning
+                </h3>
+                <p class="text-sm text-slate-400">
+                    <p>Administrado por:<p>
+                    <p>Jesús Alejandro Ascencio Sandoval<p>
+                    <p>Max Adrian Domen Sevilla<p>
+                    <p>Valeria Figueroa Montes<p>
+                    <p>Cristobal Sebastián Mejia España<p>
+                    <p>Giovanna Vianney Martínez Enríquez<p>
+                    <p>Derek Owen Villegas López<p>
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="#definicion" class="hover:text-white transition-colors">Definición</a></li>
+                    <li><a href="#conceptos" class="hover:text-white transition-colors">Conceptos</a></li>
+                    <li><a href="#galeria" class="hover:text-white transition-colors">Galería</a></li>
+                    <li><a href="#estrategias" class="hover:text-white transition-colors">Estrategias</a></li>
+                    <li><a href="#mexico" class="hover:text-white transition-colors">Marco Legal MX</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-slate-400">
+                    Universidad de Guadalajara<br />
+                    Guadalajara, México<br />
+                    Licenciatura en Pscología <br />
+                    Necesidades Psicoeducativas Especiales <br />
+                    psicolearning7@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.
         </div>
     </footer>
 
