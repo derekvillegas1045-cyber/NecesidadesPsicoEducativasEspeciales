@@ -9,6 +9,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .card.active .card-content {
+            display: block;
+        }
+    </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
 
@@ -26,6 +31,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
                     <a href="#definicion" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Definición</a>
+                    <a href="#conceptos" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conceptos</a>
                     <a href="#mexico" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contexto México</a>
                     <a href="#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psicólogo</a>
                     <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
@@ -47,6 +53,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
                 <a href="#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
+                <a href="#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
                 <a href="#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
                 <a href="#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
             </div>
@@ -133,6 +140,48 @@
                             Desde la psicología, nos enfocamos en el potencial de desarrollo y en la salud emocional, no en la etiqueta diagnóstica como limitante.
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Conceptos -->
+    <section id="conceptos" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Conceptos</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                Conceptos Fundamentales
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
+                Entendiendo los términos clave en las Necesidades Psicoeducativas Especiales.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Déficit</h3>
+                <div class="card-content hidden group-hover:block">
+                    <p class="text-slate-600 leading-relaxed">
+                        Es la pérdida o anormalidad de una estructura o función psicológica, fisiológica o anatómica.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Trastorno</h3>
+                <div class="card-content hidden group-hover:block">
+                    <p class="text-slate-600 leading-relaxed">
+                        Es la alteración del desarrollo o funcionamiento en áreas cognitivas, emocionales o conductuales que interfieren con el aprendizaje o vida cotidiana.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Discapacidad</h3>
+                <div class="card-content hidden group-hover:block">
+                    <p class="text-slate-600 leading-relaxed">
+                        Es el resultado de la interacción entre las características del individuo y las barreras del entorno, no es inherente al individuo, sino al contexto.
+                    </p>
                 </div>
             </div>
         </div>
@@ -248,6 +297,7 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
                     <li><a href="#definicion" class="hover:text-white transition-colors">Definición</a></li>
+                    <li><a href="#conceptos" class="hover:text-white transition-colors">Conceptos</a></li>
                     <li><a href="#mexico" class="hover:text-white transition-colors">Marco Legal MX</a></li>
                 </ul>
             </div>
