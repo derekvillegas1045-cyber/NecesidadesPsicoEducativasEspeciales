@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déficit Motor - Psicolearning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-panel { background: linear-gradient(135deg, #d97706 0%, #f59e0b 45%, #fbbf24 100%); }
+        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
+        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
+        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="activity" class="h-8 w-8 text-amber-600"></i>
+                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-amber-600 transition">Psicolearning</a>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#introduccion" class="text-slate-600 hover:text-amber-600">Introducción</a>
+                    <a href="#signos" class="text-slate-600 hover:text-amber-600">Signos</a>
+                    <a href="#barreras" class="text-slate-600 hover:text-amber-600">Barreras</a>
+                    <a href="#estrategias" class="text-slate-600 hover:text-amber-600">Estrategias</a>
+                    <button class="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition" onclick="window.location='index.html';">Volver</button>
+                </div>
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#introduccion" class="block text-slate-600 hover:text-amber-600">Introducción</a>
+                <a href="#signos" class="block text-slate-600 hover:text-amber-600">Signos</a>
+                <a href="#barreras" class="block text-slate-600 hover:text-amber-600">Barreras</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-amber-600">Estrategias</a>
+                <button class="w-full text-left text-amber-600 font-semibold" onclick="window.location='index.html';">Volver al inicio</button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-panel text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 items-center">
+                <div>
+                    <span class="pill bg-white/15 border border-white/20 text-white">Déficit Motor</span>
+                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Cuando el cuerpo gasta energía en lo automático</h1>
+                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
+                        Es una alteración en la capacidad del cerebro para planificar, coordinar y ejecutar movimientos voluntarios. Su sistema nervioso se agota más rápido haciendo lo que otros hacen en piloto automático.
+                    </p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Gasto energético elevado</h2>
+                        <p class="text-slate-600">Tareas simples requieren cálculos neurológicos complejos constantes.</p>
+                    </div>
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Agotamiento físico</h2>
+                        <p class="text-slate-600">El sistema nervioso se fatiga mucho más rápido que en otros niños.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        <section id="introduccion" class="grid gap-10 lg:grid-cols-2 items-start">
+            <article class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">Es una alteración en la capacidad del cerebro para planificar, coordinar y ejecutar movimientos voluntarios.</p>
+                <p class="text-slate-600 leading-relaxed mb-4">El cerebro realiza un gasto de energía monumental para cosas que nosotros hacemos en "piloto automático". Para ti, agarrar un lápiz es una acción simple.</p>
+                <p class="text-slate-600 leading-relaxed">Para el cerebro de un niño con déficit motor, es un cálculo matemático complejo: "¿Cuánta fuerza aplico? ¿En qué ángulo pongo los dedos? ¿Cómo mantengo el equilibrio?". Esto hace que su sistema nervioso se agote muchísimo más rápido.</p>
+            </article>
+            <div class="space-y-6">
+                <div class="bg-amber-600 text-white p-8 rounded-[32px] shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-3">Piloto automático agotado</h3>
+                    <p class="leading-relaxed">Lo que para otros es automático, para ellos requiere cálculos constantes y voluntarios.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Motricidad gruesa y fina</h3>
+                    <p class="text-slate-600 leading-relaxed">Problemas en movimientos grandes (tropiezos) o precisos (escritura).</p>
+                </div>
+            </div>
+        </section>
+        <section id="signos">
+            <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.32em] text-amber-100 font-semibold">Signos y Síntomas</p>
+                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">La torpeza del movimiento</h2>
+                    </div>
+                    <div class="rounded-3xl bg-white/10 px-5 py-4 max-w-md text-slate-100">
+                        <p>Se divide en motricidad gruesa (movimientos grandes) y fina (precisos). Ambas áreas pueden estar afectadas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-6 mt-10 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Torpeza evidente</h3>
+                    <p class="text-slate-600 leading-relaxed">Se tropieza con sus pies, choca con marcos de puertas. Le cuesta saltar cuerda, andar en bici o atrapar una pelota.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Retos manuales</h3>
+                    <p class="text-slate-600 leading-relaxed">A los 6-7 años todavía no puede atarse agujetas, abotonarse, usar tijeras o abrir empaques.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Agarre atípico</h3>
+                    <p class="text-slate-600 leading-relaxed">Toma el lápiz con puño cerrado o fuerza exagerada, rompe puntas o perfora las hojas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Postura "derretida"</h3>
+                    <p class="text-slate-600 leading-relaxed">Mantener tono muscular requiere esfuerzo, se recarga sobre la mesa, sostiene su cabeza o se escurre en la silla.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Evitación del esfuerzo</h3>
+                    <p class="text-slate-600 leading-relaxed">Prefiere juegos de mesa o videojuegos en lugar de correr, porque sabe que su cuerpo no responde igual.</p>
+                </div>
+            </div>
+        </section>
+        <section id="barreras" class="space-y-10">
+            <div class="text-center">
+                <p class="text-amber-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">La escuela es sorprendentemente física</h2>
+            </div>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">La tortura de los apuntes</h3>
+                    <p class="text-slate-600 leading-relaxed">Escritura a mano es su peor enemigo. Letra ilegible, escribe lento, mano les duele. Mientras compañeros copian todo, él va en primer párrafo.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Desfase saber/plasmación</h3>
+                    <p class="text-slate-600 leading-relaxed">Examen oral: 10. Examen escrito: reprueba. Se cansa de escribir y pone respuestas cortas para terminar el dolor.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Educación Física humillante</h3>
+                    <p class="text-slate-600 leading-relaxed">Quedar siempre último en carreras, ser el último elegido para equipos. Golpea directamente su autoestima.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Organización espacial</h3>
+                    <p class="text-slate-600 leading-relaxed">Cuesta alinear números en sumas, respetar márgenes. Trabajos se ven "sucios" y es regañado injustamente.</p>
+                </div>
+            </div>
+        </section>
+        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
+            <div class="bg-slate-900 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="inline-flex rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold">En Casa</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">Ropa y entorno accesible</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Elimina barreras innecesarias. Zapatos con velcro, pantalones con resorte, mochilas con ruedas para no sobrecargar equilibrio.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Herramientas adaptadas</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Cubiertos con mangos gruesos, cepillos eléctricos, lápices triangulares o con adaptadores de goma para reducir esfuerzo de pinza.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Paciencia y tiempo extra</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Rutinas le toman el doble. Despiértalo más temprano para no estar gritando, lo cual solo tensa más sus músculos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
+                <div class="mb-8">
+                    <span class="inline-flex rounded-full bg-amber-100 px-4 py-2 text-amber-800 text-sm font-semibold">En la Escuela</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Alternativas a escritura a mano</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Si causa dolor físico, permitir tableta, computadora o grabar. Priorizar evaluación oral o de opción múltiple.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Reducción de carga escrita</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">En matemáticas, proporcionar hoja impresa con sumas ya acomodadas. Solo escribe el resultado en lugar de copiar todo.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Ajustes en mobiliario</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Asegurar que pies toquen el suelo. Poner banco o cajita bajo sus pies para mantener equilibrio.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Educación Física inclusiva</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Evaluar esfuerzo y participación, no destreza. Modificar reglas: permitir dos botes antes de atrapar, por ejemplo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="activity" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
+                <p class="text-sm text-slate-400">Estrategias para comprender y acompañar el déficit motor con adaptaciones prácticas y accesibles.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
+                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
+                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        let menuAbierto = false;
+        btnMenu.addEventListener('click', () => {
+            menuAbierto = !menuAbierto;
+            menuMovil.classList.toggle('hidden', !menuAbierto);
+        });
+    </script>
+</body>
+</html>

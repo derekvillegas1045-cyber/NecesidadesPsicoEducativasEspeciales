@@ -13,6 +13,181 @@
         .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border-radius: 9999px; font-weight: 700; }
         .pill--autism { background: rgba(245, 158, 11, .12); color: #b45309; }
         .section-label { border-left: 4px solid #f97316; }
+        .autismo-game { text-align: center; }
+        .autismo-game .palabra-desordenada { font-size: 35px; letter-spacing: 5px; color: #e67e22; font-weight: bold; margin: 20px auto; }
+        .autismo-game input { padding: 10px; font-size: 18px; border-radius: 5px; border: 2px solid #3498db; width: 220px; max-width: 100%; text-align: center; }
+        .autismo-game button { padding: 10px 20px; font-size: 18px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .autismo-game .feedback { margin-top: 15px; font-weight: bold; }
+
+        .color-activity-dynamic * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .color-activity-dynamic {
+            background: #f4f7fb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        .color-activity-dynamic h1 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .color-activity-dynamic .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .color-activity-dynamic .game-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .color-activity-dynamic .shape-area {
+            position: relative;
+            width: 400px;
+            height: 450px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .color-activity-dynamic .tree-top {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-bottom: 280px solid #2ea44f;
+            left: 40px;
+            top: 30px;
+        }
+        .color-activity-dynamic .tree-trunk {
+            position: absolute;
+            width: 60px;
+            height: 110px;
+            background: #8b5a2b;
+            bottom: 30px;
+            left: 170px;
+            border-radius: 5px;
+        }
+        .color-activity-dynamic .house-roof {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 170px solid transparent;
+            border-right: 170px solid transparent;
+            border-bottom: 150px solid #e74c3c;
+            left: 30px;
+            top: 40px;
+        }
+        .color-activity-dynamic .house-body {
+            position: absolute;
+            width: 260px;
+            height: 180px;
+            background: #f1c40f;
+            bottom: 80px;
+            left: 70px;
+        }
+        .color-activity-dynamic .boat-sail {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 140px solid transparent;
+            border-bottom: 180px solid #ecf0f1;
+            left: 160px;
+            top: 60px;
+        }
+        .color-activity-dynamic .boat-hull {
+            position: absolute;
+            width: 280px;
+            height: 80px;
+            background: #d35400;
+            bottom: 90px;
+            left: 60px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        .color-activity-dynamic .boat-pole {
+            position: absolute;
+            width: 10px;
+            height: 200px;
+            background: #7f8c8d;
+            left: 150px;
+            top: 50px;
+        }
+        .color-activity-dynamic .drop-zone {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border: 4px dashed rgba(255,255,255,0.8);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            z-index: 10;
+            transition: background 0.3s;
+        }
+        .color-activity-dynamic .drop-zone.red { background: rgba(255,77,77,0.35); }
+        .color-activity-dynamic .drop-zone.blue { background: rgba(77,136,255,0.35); }
+        .color-activity-dynamic .drop-zone.yellow { background: rgba(255,214,51,0.35); }
+        .color-activity-dynamic .drop-zone.green { background: rgba(51,204,102,0.35); }
+        .color-activity-dynamic .drop-zone.hovered {
+            background: rgba(255,255,255,0.5);
+        }
+        .color-activity-dynamic .pieces-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .color-activity-dynamic .pieces {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 100px;
+            min-height: 340px;
+        }
+        .color-activity-dynamic .draggable {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: grab;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .color-activity-dynamic .draggable:active {
+            cursor: grabbing;
+            transform: scale(0.9);
+        }
+        .color-activity-dynamic .red { background: #ff4d4d; }
+        .color-activity-dynamic .blue { background: #4d88ff; }
+        .color-activity-dynamic .yellow { background: #ffd633; }
+        .color-activity-dynamic .green { background: #33cc66; }
+        .color-activity-dynamic .correct {
+            animation: pop .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+        }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .color-activity-dynamic .message {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2ea44f;
+            min-height: 40px;
+        }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
@@ -26,7 +201,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
                     <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
-                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del PsicÛlogo</a>
+                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psic√≥logo</a>
                     <button class="bg-amber-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-amber-700 transition-colors" onclick="window.location='index.html';">Volver</button>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -38,7 +213,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
                 <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Recursos</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del PsicÛlogo</a>
+                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del PsicÔøΩlogo</a>
             </div>
         </div>
     </nav>
@@ -48,16 +223,16 @@
                 <div>
                     <span class="pill pill--autism">Trastorno del Espectro Autista</span>
                     <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Pensar en detalle, navegar un mundo impredecible</h1>
-                    <p class="mt-5 text-lg leading-8 text-slate-900 max-w-2xl">El TEA altera cÛmo se interpreta la comunicaciÛn social y cÛmo se adapta el pensamiento. Para ellos, el mundo es m·s claro cuando est· ordenado y estructurado.</p>
+                    <p class="mt-5 text-lg leading-8 text-slate-900 max-w-2xl">El TEA altera c√≥mo se interpreta la comunicaci√≥n social y c√≥mo se adapta el pensamiento. Para ellos, el mundo es m√°s claro cuando est√° ordenado y estructurado.</p>
                 </div>
                 <div class="space-y-4">
                     <div class="feature-card detail-card p-6 rounded-3xl">
                         <h2 class="text-xl font-semibold text-slate-900">Procesamiento detallista</h2>
-                        <p class="mt-3 text-slate-600">Pueden ver una sola hoja con m·s detalle que el bosque completo.</p>
+                        <p class="mt-3 text-slate-600">Pueden ver una sola hoja con m√°s detalle que el bosque completo.</p>
                     </div>
                     <div class="feature-card detail-card p-6 rounded-3xl">
                         <h2 class="text-xl font-semibold text-slate-900">Socialmente exigente</h2>
-                        <p class="mt-3 text-slate-600">Las interacciones espont·neas suelen ser abrumadoras porque no tienen reglas explÌcitas.</p>
+                        <p class="mt-3 text-slate-600">Las interacciones espont√°neas suelen ser abrumadoras porque no tienen reglas expl√≠citas.</p>
                     </div>
                 </div>
             </div>
@@ -66,8 +241,8 @@
     <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-2 items-start">
             <div class="bg-white detail-card p-10 rounded-3xl border border-slate-200">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">øQuÈ es el TEA?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Desde la neuropsicologÌa, el TEA es una condiciÛn del neurodesarrollo que afecta principalmente dos ·reas: la comunicaciÛn/interacciÛn social y la flexibilidad del pensamiento.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">¬øQu√© es el TEA?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">Desde la neuropsicolog√≠a, el TEA es una condici√≥n del neurodesarrollo que afecta principalmente dos √°reas: la comunicaci√≥n/interacci√≥n social y la flexibilidad del pensamiento.</p>
                 <p class="text-slate-600 leading-relaxed">Su cerebro suele ser extremadamente detallista. Mientras nosotros vemos un bosque, ellos pueden enfocarse en la forma de una sola hoja.</p>
             </div>
             <div class="space-y-6">
@@ -78,11 +253,11 @@
                 <div class="grid gap-4 sm:grid-cols-2">
                     <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
                         <span class="text-sm font-semibold uppercase tracking-wide text-amber-700">Detalles</span>
-                        <p class="mt-3 text-slate-600">Prefieren informaciÛn concreta sobre reglas claras.</p>
+                        <p class="mt-3 text-slate-600">Prefieren informaci√≥n concreta sobre reglas claras.</p>
                     </div>
                     <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
                         <span class="text-sm font-semibold uppercase tracking-wide text-amber-700">Ruido emocional</span>
-                        <p class="mt-3 text-slate-600">Lo social puede sentirse caÛtico y poco fiable.</p>
+                        <p class="mt-3 text-slate-600">Lo social puede sentirse ca√≥tico y poco fiable.</p>
                     </div>
                 </div>
             </div>
@@ -91,13 +266,13 @@
     <section class="py-16 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <p class="text-amber-600 font-semibold uppercase tracking-wide">Signos y SÌntomas</p>
-                <h2 class="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">A quÈ prestar atenciÛn</h2>
+                <p class="text-amber-600 font-semibold uppercase tracking-wide">Signos y S√≠ntomas</p>
+                <h2 class="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">A qu√© prestar atenci√≥n</h2>
             </div>
             <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Intereses intensos</h3>
-                    <p class="text-slate-600">Se apasionan por un tema especÌfico y pueden hablar de Èl durante horas.</p>
+                    <p class="text-slate-600">Se apasionan por un tema espec√≠fico y pueden hablar de √©l durante horas.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
                     <h3 class="text-xl font-semibold text-slate-900 mb-3">Lenguaje no verbal</h3>
@@ -120,25 +295,25 @@
     </section>
     <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <p class="text-amber-600 font-semibold uppercase tracking-wide">Barreras AcadÈmicas</p>
+            <p class="text-amber-600 font-semibold uppercase tracking-wide">Barreras Acad√©micas</p>
             <h2 class="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">Retos en el aprendizaje escolar</h2>
         </div>
         <div class="grid gap-6 lg:grid-cols-2">
             <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                <h3 class="text-xl font-semibold text-slate-900 mb-3">CurrÌculo oculto</h3>
-                <p class="text-slate-600">Reglas implÌcitas no explicadas causan malentendidos y etiquetas sociales.</p>
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">Curr√≠culo oculto</h3>
+                <p class="text-slate-600">Reglas impl√≠citas no explicadas causan malentendidos y etiquetas sociales.</p>
             </div>
             <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
                 <h3 class="text-xl font-semibold text-slate-900 mb-3">Trabajo en equipo</h3>
-                <p class="text-slate-600">Coordinar ideas con otros es difÌcil porque cuesta entender la perspectiva ajena.</p>
+                <p class="text-slate-600">Coordinar ideas con otros es dif√≠cil porque cuesta entender la perspectiva ajena.</p>
             </div>
             <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
                 <h3 class="text-xl font-semibold text-slate-900 mb-3">Funciones ejecutivas</h3>
-                <p class="text-slate-600">Organizar tareas, iniciar trabajo y priorizar puede convertirse en un caos sin guÌa.</p>
+                <p class="text-slate-600">Organizar tareas, iniciar trabajo y priorizar puede convertirse en un caos sin gu√≠a.</p>
             </div>
             <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
                 <h3 class="text-xl font-semibold text-slate-900 mb-3">Lenguaje figurado</h3>
-                <p class="text-slate-600">Frases como "Èchame una mano" se toman de forma literal y confunden.</p>
+                <p class="text-slate-600">Frases como "√©chame una mano" se toman de forma literal y confunden.</p>
             </div>
         </div>
     </section>
@@ -149,8 +324,8 @@
                     <h2 class="text-2xl font-bold text-slate-900 mb-6">Estrategias en casa</h2>
                     <div class="space-y-6">
                         <div>
-                            <h3 class="font-semibold text-slate-900">AnticipaciÛn con visuales</h3>
-                            <p class="text-slate-600">Calendarios o dibujos que muestran la secuencia del dÌa reducen la ansiedad.</p>
+                            <h3 class="font-semibold text-slate-900">Anticipaci√≥n con visuales</h3>
+                            <p class="text-slate-600">Calendarios o dibujos que muestran la secuencia del d√≠a reducen la ansiedad.</p>
                         </div>
                         <div>
                             <h3 class="font-semibold text-slate-900">Instrucciones directas</h3>
@@ -158,7 +333,7 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-slate-900">Lugar seguro</h3>
-                            <p class="text-slate-600">Proporciona un rincÛn tranquilo con pocos estÌmulos donde pueda calmarse.</p>
+                            <p class="text-slate-600">Proporciona un rinc√≥n tranquilo con pocos est√≠mulos donde pueda calmarse.</p>
                         </div>
                     </div>
                 </div>
@@ -171,11 +346,11 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-slate-900">Cuidar el entorno</h3>
-                            <p class="text-slate-600">Permitir audÌfonos o alejarlo de fuentes ruidosas mejora su concentraciÛn.</p>
+                            <p class="text-slate-600">Permitir aud√≠fonos o alejarlo de fuentes ruidosas mejora su concentraci√≥n.</p>
                         </div>
                         <div>
                             <h3 class="font-semibold text-slate-900">Descansos estructurados</h3>
-                            <p class="text-slate-600">Un recreo con actividades pequeÒas puede ser menos estresante que el desorden general.</p>
+                            <p class="text-slate-600">Un recreo con actividades peque√±as puede ser menos estresante que el desorden general.</p>
                         </div>
                         <div>
                             <h3 class="font-semibold text-slate-900">Fragmentar tareas</h3>
@@ -186,24 +361,68 @@
             </div>
         </div>
     </section>
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="autismo-game bg-slate-50 p-10 rounded-3xl detail-card border border-slate-200 mx-auto max-w-2xl">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Descifra la palabra</h2>
+                <div id="pista" class="text-slate-600 mb-4">Pista: Es un proceso mental</div>
+                <div id="wordDisplay" class="palabra-desordenada">ICGIAOLOPS</div>
+                <input type="text" id="userInput" placeholder="Escribe aqu√≠...">
+                <button type="button" onclick="check()" class="mt-4">Revisar</button>
+                <div id="msg" class="feedback"></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-10 rounded-3xl detail-card border border-slate-200 mx-auto max-w-2xl text-center">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Juego recomendado: Torre de Hanoi</h2>
+                <p class="text-slate-600 mb-6">Practica organizaci√≥n y resoluci√≥n de problemas con el cl√°sico desaf√≠o de mover discos sin saltarte reglas.</p>
+                <div class="overflow-hidden rounded-3xl border border-slate-200 mb-6" style="aspect-ratio: 16 / 9;">
+                    <iframe src="https://www.mathsisfun.com/games/towerofhanoi.html" title="Tower of Hanoi" class="w-full h-full" loading="lazy"></iframe>
+                </div>
+                <a href="https://www.mathsisfun.com/games/towerofhanoi.html" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">Abrir Tower de Hanoi en nueva pesta√±a</a>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="color-activity-dynamic detail-card rounded-3xl border border-slate-200 bg-white">
+                <h1>Arrastra los colores al lugar correcto</h1>
+                <p class="subtitle">¬°Completa la figura para avanzar a la siguiente!</p>
+                <div class="game-container">
+                    <div class="shape-area" id="shape-area"></div>
+                    <div class="pieces-container">
+                        <div class="pieces" id="pieces-box">
+                            <div class="draggable red" draggable="true" id="red"></div>
+                            <div class="draggable blue" draggable="true" id="blue"></div>
+                            <div class="draggable yellow" draggable="true" id="yellow"></div>
+                            <div class="draggable green" draggable="true" id="green"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="message" id="message"></div>
+            </div>
+        </div>
+    </section>
     <footer class="bg-slate-900 text-slate-300 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
             <div>
                 <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">InformaciÛn centrada en la inclusiÛn y las estrategias psicoeducativas.</p>
+                <p class="text-sm text-slate-400">Informaci√≥n centrada en la inclusi√≥n y las estrategias psicoeducativas.</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces R·pidos</h4>
+                <h4 class="text-white font-semibold mb-4">Enlaces R√°pidos</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
                     <li><a href="index.html#estrategias" class="hover:text-white transition-colors">Estrategias</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white transition-colors">Contexto MÈxico</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white transition-colors">Rol del PsicÛlogo</a></li>
+                    <li><a href="index.html#mexico" class="hover:text-white transition-colors">Contexto M√©xico</a></li>
+                    <li><a href="index.html#rol" class="hover:text-white transition-colors">Rol del Psic√≥logo</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br />Guadalajara, MÈxico<br />Licenciatura en PsicologÌa<br />Necesidades Psicoeducativas Especiales<br />psicolearning7@gmail.com</p>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br />Guadalajara, M√©xico<br />Licenciatura en Psicolog√≠a<br />Necesidades Psicoeducativas Especiales<br />psicolearning7@gmail.com</p>
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div>
@@ -233,6 +452,179 @@
                 lucide.createIcons();
             });
         });
+
+        const palabras = [
+            {o: "PSICOLOGIA", d: "ICGIAOLOPS", p: "Estudio de la mente"},
+            {o: "RESILIENCIA", d: "ILIENRESIAC", p: "Capacidad de superar traumas"},
+            {o: "EMPATIA", d: "AITAMPE", p: "Ponerse en el lugar del otro"}
+        ];
+        let actual = 0;
+        function check() {
+            let val = document.getElementById("userInput").value.toUpperCase();
+            if(val === palabras[actual].o) {
+                document.getElementById("msg").innerText = "¬°Correcto! ‚ú®";
+                document.getElementById("msg").style.color = "green";
+                setTimeout(next, 1500);
+            } else {
+                document.getElementById("msg").innerText = "Sigue intentando...";
+                document.getElementById("msg").style.color = "red";
+            }
+        }
+        function next() {
+            actual++;
+            if(actual >= palabras.length) actual = 0;
+            document.getElementById("wordDisplay").innerText = palabras[actual].d;
+            document.getElementById("pista").innerText = "Pista: " + palabras[actual].p;
+            document.getElementById("userInput").value = "";
+            document.getElementById("msg").innerText = "";
+        }
+
+        const figuras = [
+            {
+                nombre: "√Årbol",
+                htmlEstructura: `
+                    <div class="tree-top"></div>
+                    <div class="tree-trunk"></div>
+                `,
+                hoyos: [
+                    { color: "red", top: "100px", left: "172px" },
+                    { color: "blue", top: "180px", left: "110px" },
+                    { color: "yellow", top: "180px", left: "235px" },
+                    { color: "green", top: "260px", left: "172px" }
+                ]
+            },
+            {
+                nombre: "Casa",
+                htmlEstructura: `
+                    <div class="house-roof"></div>
+                    <div class="house-body"></div>
+                `,
+                hoyos: [
+                    { color: "red", top: "110px", left: "172px" },
+                    { color: "blue", top: "210px", left: "100px" },
+                    { color: "yellow", top: "210px", left: "240px" },
+                    { color: "green", top: "280px", left: "172px" }
+                ]
+            },
+            {
+                nombre: "Barco",
+                htmlEstructura: `
+                    <div class="boat-pole"></div>
+                    <div class="boat-sail"></div>
+                    <div class="boat-hull"></div>
+                `,
+                hoyos: [
+                    { color: "red", top: "100px", left: "180px" },
+                    { color: "blue", top: "180px", left: "220px" },
+                    { color: "yellow", top: "295px", left: "110px" },
+                    { color: "green", top: "295px", left: "230px" }
+                ]
+            }
+        ];
+
+        let indiceFiguraActual = 0;
+        let correctCount = 0;
+
+        const shapeArea = document.getElementById("shape-area");
+        const piecesBox = document.getElementById("pieces-box");
+        const message = document.getElementById("message");
+        const draggables = document.querySelectorAll(".draggable");
+
+        draggables.forEach(item => {
+            item.addEventListener("dragstart", e => {
+                e.dataTransfer.setData("color", item.id);
+                setTimeout(() => item.style.opacity = "0.5", 0);
+            });
+
+            item.addEventListener("dragend", () => {
+                item.style.opacity = "1";
+            });
+        });
+
+        function cargarFigura(indice) {
+            correctCount = 0;
+            message.textContent = "";
+            message.style.color = "#2ea44f";
+
+            const figura = figuras[indice];
+            shapeArea.innerHTML = figura.htmlEstructura;
+
+            figura.hoyos.forEach(hoyo => {
+                const dropZone = document.createElement("div");
+                dropZone.classList.add("drop-zone", hoyo.color);
+                dropZone.dataset.color = hoyo.color;
+                dropZone.style.top = hoyo.top;
+                dropZone.style.left = hoyo.left;
+
+                dropZone.addEventListener("dragover", e => {
+                    e.preventDefault();
+                    dropZone.classList.add("hovered");
+                });
+
+                dropZone.addEventListener("dragleave", () => {
+                    dropZone.classList.remove("hovered");
+                });
+
+                dropZone.addEventListener("drop", e => {
+                    e.preventDefault();
+                    dropZone.classList.remove("hovered");
+
+                    const draggedColor = e.dataTransfer.getData("color");
+                    const correctColor = dropZone.dataset.color;
+                    if (draggedColor === correctColor) {
+                        const draggedElement = document.getElementById(draggedColor);
+                        dropZone.appendChild(draggedElement);
+                        draggedElement.style.margin = "0";
+                        draggedElement.style.width = "100%";
+                        draggedElement.style.height = "100%";
+                        draggedElement.style.cursor = "default";
+                        draggedElement.style.border = "none";
+                        draggedElement.setAttribute("draggable", "false");
+                        dropZone.classList.add("correct");
+                        correctCount++;
+                        if (correctCount === 4) {
+                            message.textContent = "¬°Excelente! Preparando la siguiente...";
+                            setTimeout(siguienteFigura, 2000);
+                        }
+                    } else {
+                        message.textContent = "Ups, ese color no va ah√≠";
+                        message.style.color = "#e74c3c";
+                        setTimeout(() => {
+                            if (correctCount !== 4) {
+                                message.textContent = "";
+                                message.style.color = "#2ea44f";
+                            }
+                        }, 1500);
+                    }
+                });
+
+                shapeArea.appendChild(dropZone);
+            });
+        }
+
+        function siguienteFigura() {
+            draggables.forEach(piece => {
+                piecesBox.appendChild(piece);
+                piece.style.margin = "";
+                piece.style.width = "60px";
+                piece.style.height = "60px";
+                piece.style.cursor = "grab";
+                piece.style.border = "3px solid white";
+                piece.setAttribute("draggable", "true");
+            });
+
+            indiceFiguraActual++;
+            if (indiceFiguraActual >= figuras.length) {
+                indiceFiguraActual = 0;
+                message.textContent = "¬°Terminaste todas las figuras! Volviendo a empezar...";
+                message.style.color = "#f39c12";
+                setTimeout(() => cargarFigura(indiceFiguraActual), 2000);
+            } else {
+                cargarFigura(indiceFiguraActual);
+            }
+        }
+
+        cargarFigura(indiceFiguraActual);
     </script>
 </body>
 </html>
