@@ -178,7 +178,7 @@ strong{font-weight:var(--fw-s)}
 .search-go{width:100%;margin-top:var(--sp-8);padding:10px;border:1px solid var(--c-obs);border-radius:var(--rf);background:var(--c-obs);color:#fff;font-family:var(--f-pri);font-size:14px;cursor:pointer;transition:all var(--dm) var(--ez)}
 .search-go:hover{background:var(--c-ink)}
 .search-go:disabled{opacity:.5;cursor:not-allowed}
-.search-result{margin-top:var(--sp-12);font-size:14px;color:var(--c-fg);line-height:1.58;min-height:20px}
+.search-result{margin-top:var(--sp-12);font-size:14px;color:var(--c-fg);line-height:1.58;min-height:20px;padding:var(--sp-12);background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.06);border-radius:4px}
 .search-result .loading{color:var(--c-am);font-style:italic}
 .search-result strong{color:var(--c-obs);font-weight:var(--fw-s)}
 .search-result em{font-style:italic}
