@@ -40,7 +40,8 @@ app.post('/api/search', async (req, res) => {
           }
         ],
         temperature: 0.7,
-        max_tokens: 200
+        max_tokens: 200,
+        reasoning_format: 'hidden'
       })
     });
 
@@ -51,7 +52,9 @@ app.post('/api/search', async (req, res) => {
     }
 
     const data = await response.json();
-    const answer = data.choices?.[0]?.message?.content || 'No se pudo obtener una respuesta.';
+    let answer = data.choices?.[0]?.message?.content || 'No se pudo obtener una respuesta.';
+    // Strip any stray thinking tags as a safety net
+    answer = answer.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
     
     res.json({ answer });
   } catch (err) {
