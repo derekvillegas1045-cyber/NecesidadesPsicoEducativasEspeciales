@@ -28,7 +28,7 @@ app.post('/api/search', async (req, res) => {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b',
+        model: 'qwen/qwen3.6-27b',
         messages: [
           {
             role: 'system',
