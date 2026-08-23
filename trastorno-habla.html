@@ -1,87 +1,37 @@
 <!DOCTYPE html>
 <html lang="es" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trastorno del Habla - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #059669 0%, #10b981 45%, #34d399 100%); }
-        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
-        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
-        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trastorno del Habla - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="mic" class="h-8 w-8 text-emerald-600"></i>
-                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-emerald-600 transition">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#introduccion" class="text-slate-600 hover:text-emerald-600">Introducción</a>
-                    <a href="#signos" class="text-slate-600 hover:text-emerald-600">Signos</a>
-                    <a href="#barreras" class="text-slate-600 hover:text-emerald-600">Barreras</a>
-                    <a href="#estrategias" class="text-slate-600 hover:text-emerald-600">Estrategias</a>
-                    <button class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition" onclick="window.location='trastorno-lenguaje.html';">Volver</button>
-                </div>
-                <div class="md:hidden">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#introduccion" class="block text-slate-600 hover:text-emerald-600">Introducción</a>
-                <a href="#signos" class="block text-slate-600 hover:text-emerald-600">Signos</a>
-                <a href="#barreras" class="block text-slate-600 hover:text-emerald-600">Barreras</a>
-                <a href="#estrategias" class="block text-slate-600 hover:text-emerald-600">Estrategias</a>
-                <button class="w-full text-left text-emerald-600 font-semibold" onclick="window.location='trastorno-lenguaje.html';">Volver</button>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-panel text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-12 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill bg-white/15 border border-white/20 text-white">Trastorno del Habla</span>
-                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">La gimnasia motora de la voz</h1>
-                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
-                        Es una dificultad neurológica y motora que afecta la producción física de los sonidos. No tiene nada que ver con la inteligencia ni con la capacidad de comprender el mundo.
-                    </p>
-                </div>
-                <div class="grid gap-6">
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Coordinación motora</h2>
-                        <p class="text-slate-600">Respiración, cuerdas vocales y colocación de lengua deben sincronizarse en fracciones de segundo.</p>
-                    </div>
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Planificación motora</h2>
-                        <p class="text-slate-600">La vía entre el cerebro y los músculos de la boca es inmadura o imprecisa.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
-        <section id="introduccion" class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-start">
-            <article class="bg-white p-6 md:p-10 rounded-[32px] detail-card border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Es una dificultad neurológica y motora que afecta la producción física de los sonidos. No tiene absolutamente nada que ver con la inteligencia ni con la capacidad de comprender el mundo.</p>
-                <p class="text-slate-600 leading-relaxed mb-4">El cerebro debe ejecutar una gimnasia milimétrica: coordinar la respiración, hacer vibrar las cuerdas vocales y colocar la lengua en un punto exacto en fracciones de segundo.</p>
-                <p class="text-slate-600 leading-relaxed">Cuando hay un trastorno del habla, esta vía de comunicación entre el cerebro y los músculos de la boca (la planificación motora) es inmadura o imprecisa. Esto incluye problemas de articulación (no poder pronunciar ciertos sonidos) o problemas de fluidez (como la tartamudez).</p>
+<body>
+    
+<nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#intro">Introducción</a></li><li><a href="#signos">Signos</a></li><li><a href="#barreras">Barreras</a></li><li><a href="#estrategias">Estrategias</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#intro" class="opm">Introducción</a><a href="#signos" class="opm">Signos</a><a href="#barreras" class="opm">Barreras</a><a href="#estrategias" class="opm">Estrategias</a><a href="index.html" class="opm">Volver al Inicio</a></div>
+    
+<section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><span class="pg-pill">Trastorno del Habla</span><h1 class="hero-hl">La gimnasia motora de la voz</h1></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
+    <main style="padding:var(--sp-152) 0"><div class="ctn">
+        <section id="introduccion" class="content-grid fu">
+            <article class="content-card">
+                <h2 style="font-size:var(--tx-sh);font-weight:var(--fw-r);line-height:var(--lh-sh);margin-bottom:var(--sp-28)">Introducción: ¿Qué es?</h2>
+                <p style="color:var(--c-fg);line-height:1.58;margin-bottom:var(--sp-12)">Es una dificultad neurológica y motora que afecta la producción física de los sonidos. No tiene absolutamente nada que ver con la inteligencia ni con la capacidad de comprender el mundo.</p>
+                <p style="color:var(--c-fg);line-height:1.58;margin-bottom:var(--sp-12)">El cerebro debe ejecutar una gimnasia milimétrica: coordinar la respiración, hacer vibrar las cuerdas vocales y colocar la lengua en un punto exacto en fracciones de segundo.</p>
+                <p style="color:var(--c-fg);line-height:1.58">Cuando hay un trastorno del habla, esta vía de comunicación entre el cerebro y los músculos de la boca (la planificación motora) es inmadura o imprecisa. Esto incluye problemas de articulación (no poder pronunciar ciertos sonidos) o problemas de fluidez (como la tartamudez).</p>
             </article>
-            <div class="space-y-6">
-                <div class="bg-emerald-600 text-white p-8 rounded-[32px] shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-3">No es inteligencia</h3>
-                    <p class="leading-relaxed">Es un desafío motor, no cognitivo. El niño comprende perfectamente; solo le cuesta producir los sonidos.</p>
+            <div style="display:flex;flex-direction:column;gap:var(--sg)">
+                <div class="info-block" style="background:var(--c-obs);color:#fff;border:none">
+                    <h3 style="font-size:var(--tx-shl);font-weight:var(--fw-s);margin-bottom:var(--sp-12)">No es inteligencia</h3>
+                    <p style="line-height:1.58">Es un desafío motor, no cognitivo. El niño comprende perfectamente; solo le cuesta producir los sonidos.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Articulación y fluidez</h3>
-                    <p class="text-slate-600 leading-relaxed">Pueden tener dificultad pronunciando ciertos sonidos o fluidez (como tartamudez).</p>
+                <div class="info-block">
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Articulación y fluidez</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Pueden tener dificultad pronunciando ciertos sonidos o fluidez (como tartamudez).</p>
                 </div>
             </div>
         </section>
@@ -99,24 +49,24 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
                 <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Sustitución de sonidos</h3>
-                    <p class="text-slate-600 leading-relaxed">Cambia una letra por otra más fácil. Dice "telota" en lugar de "pelota" o "tasa" en lugar de "casa".</p>
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Sustitución de sonidos</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Cambia una letra por otra más fácil. Dice "telota" en lugar de "pelota" o "tasa" en lugar de "casa".</p>
                 </div>
                 <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Omisión de sonidos</h3>
-                    <p class="text-slate-600 leading-relaxed">Se salta partes de la palabra, especialmente consonantes difíciles. Dice "pato" en lugar de "plato".</p>
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Omisión de sonidos</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Se salta partes de la palabra, especialmente consonantes difíciles. Dice "pato" en lugar de "plato".</p>
                 </div>
                 <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Tartamudez</h3>
-                    <p class="text-slate-600 leading-relaxed">Se queda "atorado" en la primera sílaba, alarga sonidos o hace pausas largas y tensas.</p>
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Tartamudez</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Se queda "atorado" en la primera sílaba, alarga sonidos o hace pausas largas y tensas.</p>
                 </div>
                 <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Tensión física</h3>
-                    <p class="text-slate-600 leading-relaxed">Al intentar un sonido difícil, aprieta puños, parpadea rápido o hace muecas por el esfuerzo.</p>
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Tensión física</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Al intentar un sonido difícil, aprieta puños, parpadea rápido o hace muecas por el esfuerzo.</p>
                 </div>
                 <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Evitación</h3>
-                    <p class="text-slate-600 leading-relaxed">Si sabe que no puede pronunciar una palabra, empieza a señalarla o dice algo más fácil para evitar el sonido.</p>
+                    <h3 style="font-size:var(--tx-bd);margin-bottom:var(--sp-12)">Evitación</h3>
+                    <p style="color:var(--c-fg);line-height:1.58">Si sabe que no puede pronunciar una palabra, empieza a señalarla o dice algo más fácil para evitar el sonido.</p>
                 </div>
             </div>
         </section>
@@ -128,19 +78,19 @@
             <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
                 <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
                     <h3 class="text-2xl font-bold text-slate-900 mb-5">Miedo a la participación</h3>
-                    <p class="text-slate-600 leading-relaxed">Aunque sepa la respuesta, preferirá quedarse callado antes de arriesgarse a que no lo entiendan.</p>
+                    <p style="color:var(--c-fg);line-height:1.58">Aunque sepa la respuesta, preferirá quedarse callado antes de arriesgarse a que no lo entiendan.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
                     <h3 class="text-2xl font-bold text-slate-900 mb-5">Pánico a la lectura en voz alta</h3>
-                    <p class="text-slate-600 leading-relaxed">Saber que su turno se acerca genera ansiedad paralizante, especialmente con tartamudez.</p>
+                    <p style="color:var(--c-fg);line-height:1.58">Saber que su turno se acerca genera ansiedad paralizante, especialmente con tartamudez.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
                     <h3 class="text-2xl font-bold text-slate-900 mb-5">Acoso escolar</h3>
-                    <p class="text-slate-600 leading-relaxed">Tristemente, la forma en que hablan suele ser motivo de burla, destruyendo su autoestima.</p>
+                    <p style="color:var(--c-fg);line-height:1.58">Tristemente, la forma en que hablan suele ser motivo de burla, destruyendo su autoestima.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
                     <h3 class="text-2xl font-bold text-slate-900 mb-5">Errores ortográficos por fonética</h3>
-                    <p class="text-slate-600 leading-relaxed">Los niños escriben como hablan. Si pronuncia mal, probablemente lo escriba mal también.</p>
+                    <p style="color:var(--c-fg);line-height:1.58">Los niños escriben como hablan. Si pronuncia mal, probablemente lo escriba mal también.</p>
                 </div>
             </div>
         </section>
@@ -149,7 +99,7 @@
                 <div class="flex items-center gap-3 mb-6">
                     <span class="inline-flex rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold">En Casa</span>
                 </div>
-                <div class="space-y-6">
+                <div style="display:flex;flex-direction:column;gap:var(--sg)">
                     <div>
                         <h3 class="text-2xl font-bold">Foco en el mensaje</h3>
                         <p class="mt-3 text-slate-200 leading-relaxed">Cuando cuente algo con emoción y se trabe o pronuncie mal, escúchalo con atención genuina. No lo interrumpas para corregirlo.</p>
@@ -168,7 +118,7 @@
                 <div class="mb-8">
                     <span class="inline-flex rounded-full bg-emerald-100 px-4 py-2 text-emerald-800 text-sm font-semibold">En la Escuela</span>
                 </div>
-                <div class="space-y-6">
+                <div style="display:flex;flex-direction:column;gap:var(--sg)">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900">Paciencia y contacto visual</h3>
                         <p class="mt-3 text-slate-600 leading-relaxed">Cuando intente participar y se trabe, mantén contacto visual, no termines la frase por él y espera con tranquilidad.</p>
@@ -188,37 +138,17 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="mic" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">Estrategias para comprender y acompañar el trastorno del habla con paciencia y empatía genuina.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="trastorno-lenguaje.html" class="hover:text-white">Trastorno del Lenguaje</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
-            </div>
-        </div>
-    </footer>
+    </div></main>
+    
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Estrategias para comprender y acompañar con paciencia y empatía.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE.</div></div></footer>
     <script>
-        lucide.createIcons();
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        let menuAbierto = false;
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            menuMovil.classList.toggle('hidden', !menuAbierto);
-        });
-    </script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>

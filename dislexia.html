@@ -1,300 +1,51 @@
-﻿<!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dislexia - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%); }
-        .detail-card { border-radius: 30px; box-shadow: 0 28px 80px rgba(15,23,42,.08); }
-        .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.1rem; border-radius: 9999px; font-weight: 700; }
-        .pill--dyslexia { background: rgba(16, 185, 129, .16); color: #047857; }
-        .game-panel { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 30px; }
-        .letter-button { padding: 16px 22px; font-size: 20px; border: 3px solid #2563eb; background: white; border-radius: 16px; font-weight: 700; transition: transform .2s, border-color .2s, color .2s; }
-        .letter-button:hover { transform: translateY(-2px); }
-        .letter-button.correct { background-color: #10b981; border-color: #059669; color: white; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dislexia - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
-                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600">Inicio</a>
-                    <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600">Recursos</a>
-                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
-                    <button class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition" onclick="window.location='index.html';">Volver</button>
-                </div>
-                <div class="md:hidden">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600">Inicio</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600">Recursos</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
-                <button class="w-full text-left text-emerald-600 font-semibold" onclick="window.location='index.html';">Volver a la página principal</button>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-panel text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill pill--dyslexia">Dislexia</span>
-                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Leer con confianza: estrategias claras para la dislexia</h1>
-                    <p class="mt-5 text-lg leading-8 text-slate-100 max-w-2xl">La dislexia es una dificultad específica en el procesamiento de palabras y sonidos. Un enfoque multisensorial permite que el cerebro encuentre nuevas rutas para comprender la lectura.</p>
-                </div>
-                <div class="space-y-5">
-                    <div class="detail-card p-6 bg-white text-slate-900">
-                        <h2 class="text-xl font-semibold">Enfoque fonológico</h2>
-                        <p class="mt-3 text-slate-600">Trabajar sonidos, sílabas y correspondencias entre letras y fonemas.</p>
-                    </div>
-                    <div class="detail-card p-6 bg-white text-slate-900">
-                        <h2 class="text-xl font-semibold">Apoyo emocional</h2>
-                        <p class="mt-3 text-slate-600">Un ambiente seguro reduce la ansiedad y mejora el aprendizaje.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-        <section class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2">
-            <article class="bg-white detail-card p-6 md:p-10 border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">¿Qué es la dislexia?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">No es un problema visual, ni una falta de inteligencia. Es una dificultad en la ruta del lenguaje escrito: reconocer letras, sonidos y palabras de manera fluida.</p>
-                <p class="text-slate-600 leading-relaxed">Las personas con dislexia tienen un procesamiento fonológico más lento, por lo que necesitan apoyos que transformen el trabajo de lectura en experiencias concretas y repetidas.</p>
-            </article>
-            <div class="space-y-6">
-                <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Señales frecuentes</h3>
-                    <ul class="list-disc pl-5 text-slate-600 space-y-2">
-                        <li>Dificultad para segmentar sonidos.</li>
-                        <li>Errores al leer palabras similares.</li>
-                        <li>No recordar la forma de palabras comunes.</li>
-                        <li>Evitar tareas de lectoescritura.</li>
-                    </ul>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <h4 class="font-semibold text-slate-900">Multisensorial</h4>
-                        <p class="mt-3 text-slate-600">Combinar vista, oído y tacto para fijar el aprendizaje.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <h4 class="font-semibold text-slate-900">Repetición</h4>
-                        <p class="mt-3 text-slate-600">Practicar con palabras frecuentes y sílabas en contextos sencillos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-slate-100 p-10 rounded-[32px] game-panel">
-            <div class="text-center mb-8">
-                <p class="text-emerald-600 font-semibold uppercase tracking-wide">Actividad práctica</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-slate-900">Ordena las letras</h2>
-                <p class="mt-2 text-slate-600 max-w-2xl mx-auto">Un ejercicio sencillo para reforzar la conciencia fonológica mientras se divierte.</p>
-            </div>
-            <div class="grid gap-6 md:gap-8 grid-cols-1 lg:grid-cols-2">
-                <div class="space-y-6">
-                    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-                        <h3 class="text-lg md:text-xl font-semibold text-slate-900 mb-4">Cómo jugar</h3>
-                        <ol class="list-decimal list-inside space-y-3 text-slate-600">
-                            <li>Selecciona la dificultad.</li>
-                            <li>Pulsa las letras en el orden correcto.</li>
-                            <li>Sigue el progreso y completa la palabra.</li>
-                        </ol>
-                    </div>
-                    <div class="bg-slate-50 rounded-3xl border border-slate-200 p-6">
-                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Consejo</h3>
-                        <p class="text-slate-600">No importa la velocidad: cada letra elegida correctamente construye seguridad lectora.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-3xl border border-slate-200 p-8">
-                    <div class="grid grid-cols-3 gap-3 mb-6">
-                        <button type="button" id="btn-facil" class="difficulty-btn rounded-2xl bg-emerald-600 text-white py-3 font-semibold">Fácil</button>
-                        <button type="button" id="btn-intermedio" class="difficulty-btn rounded-2xl bg-white text-slate-800 border border-slate-200 py-3 font-semibold">Intermedio</button>
-                        <button type="button" id="btn-avanzado" class="difficulty-btn rounded-2xl bg-white text-slate-800 border border-slate-200 py-3 font-semibold">Avanzado</button>
-                    </div>
-                    <div class="rounded-3xl bg-slate-100 p-6 mb-5">
-                        <p class="uppercase text-xs tracking-wide text-slate-500">Palabra</p>
-                        <div id="palabraGuia" class="mt-4 text-5xl font-bold text-slate-900">CASA</div>
-                    </div>
-                    <div class="rounded-3xl bg-slate-100 p-6 mb-5">
-                        <p class="uppercase text-xs tracking-wide text-slate-500">Estado</p>
-                        <div id="etapaBadge" class="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 font-semibold">Etapa 1: Letras</div>
-                        <p id="instruccion" class="mt-4 text-slate-600">¡Ordena las letras!</p>
-                    </div>
-                    <div id="progreso" class="min-h-[64px] text-3xl font-bold text-slate-900 mb-4"></div>
-                    <div id="letrasContainer" class="grid gap-3 sm:grid-cols-3 mb-4"></div>
-                    <div id="mensaje" class="text-emerald-700 font-semibold mb-4"></div>
-                    <button id="btnSiguiente" class="hidden w-full rounded-3xl bg-emerald-600 text-white py-4 text-lg font-semibold hover:bg-emerald-700 transition">Siguiente palabra</button>
-                </div>
-            </div>
-        </section>
-        <section class="bg-white detail-card p-10 rounded-[32px] border border-slate-200">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Rol del psicólogo</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">El psicólogo ofrece una evaluación integradora, diseña apoyos personalizados y acompaña al niño en su desarrollo emocional mientras potencia las habilidades lectoras.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Evaluación</h3>
-                    <p class="text-slate-600 text-sm">Identificar fortalezas cognitivas y barreras específicas.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Intervención</h3>
-                    <p class="text-slate-600 text-sm">Diseñar guías con ejercicio de lectura, escritura y lenguaje.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Acompañamiento</h3>
-                    <p class="text-slate-600 text-sm">Monitorear avances y ajustar apoyos en equipo con la familia.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">Estrategias psicoeducativas inclusivas para el aprendizaje con necesidades especiales.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        lucide.createIcons();
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        let menuAbierto = false;
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            menuMovil.classList.toggle('hidden', !menuAbierto);
-        });
+<body><nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#intro">Introducción</a></li><li><a href="#actividad">Actividad</a></li><li><a href="#rol">Rol del Psicólogo</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#intro" class="opm">Introducción</a><a href="#actividad" class="opm">Actividad</a><a href="#rol" class="opm">Rol del Psicólogo</a><a href="index.html" class="opm">Volver al Inicio</a></div><section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><span class="pg-pill">Dislexia</span><h1 class="hero-hl">Leer con confianza: estrategias claras para la dislexia</h1><p class="hero-sb">La dislexia es una dificultad específica en el procesamiento de palabras y sonidos. Un enfoque multisensorial permite que el cerebro encuentre nuevas rutas para comprender la lectura.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);max-width:600px;margin:var(--sp-48) auto 0;text-align:left"><div class="pg-card"><h2>Enfoque fonológico</h2><p>Trabajar sonidos, sílabas y correspondencias entre letras y fonemas.</p></div><div class="pg-card"><h2>Apoyo emocional</h2><p>Un ambiente seguro reduce la ansiedad y mejora el aprendizaje.</p></div></div></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
+<section id="intro" class="cs"><div class="ctn"><div class="content-grid fu">
+<div class="content-card"><h2>¿Qué es la dislexia?</h2><p>No es un problema visual, ni una falta de inteligencia. Es una dificultad en la ruta del lenguaje escrito: reconocer letras, sonidos y palabras de manera fluida.</p><p style="margin-top:var(--sp-12)">Las personas con dislexia tienen un procesamiento fonológico más lento, por lo que necesitan apoyos que transformen el trabajo de lectura en experiencias concretas y repetidas.</p></div>
+<div style="display:flex;flex-direction:column;gap:var(--sg)"><div class="info-block"><h3>Señales frecuentes</h3><ul class="content-list"><li>Dificultad para segmentar sonidos.</li><li>Errores al leer palabras similares.</li><li>No recordar la forma de palabras comunes.</li><li>Evitar tareas de lectoescritura.</li></ul></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--eg)"><div class="info-block"><h3>Multisensorial</h3><p>Combinar vista, oído y tacto para fijar el aprendizaje.</p></div><div class="info-block"><h3>Repetición</h3><p>Practicar con palabras frecuentes y sílabas en contextos sencillos.</p></div></div></div>
+</div></div></section>
+<section id="actividad" class="cs cs-g"><div class="ctn"><div class="fu"><p class="sl">Actividad Práctica</p><h2 class="sh sh-xs">Ordena las letras</h2></div>
+<div class="content-grid fu">
+<div><div class="info-block"><h3>Cómo jugar</h3><ol class="content-list" style="list-style:decimal"><li>Selecciona la dificultad.</li><li>Pulsa las letras en el orden correcto.</li><li>Sigue el progreso y completa la palabra.</li></ol></div>
+<div class="info-block" style="margin-top:var(--sp-28)"><h3>Consejo</h3><p>No importa la velocidad: cada letra elegida correctamente construye seguridad lectora.</p></div></div>
+<div id="juego-container" style="background:var(--c-pap);border:1px solid rgba(148,163,184,.18);padding:var(--cp)"></div>
+</div></div></section>
+<section id="rol" class="rs"><div class="ctn"><div class="rg fu"><div class="rc"><h2>Rol del psicólogo</h2><p style="margin-bottom:var(--sp-48)">El psicólogo ofrece una evaluación integradora, diseña apoyos personalizados y acompaña al niño en su desarrollo emocional mientras potencia las habilidades lectoras.</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sg)"><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Evaluación</h3><p style="color:rgba(255,255,255,.65)">Identificar fortalezas cognitivas y barreras específicas.</p></div><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Intervención</h3><p style="color:rgba(255,255,255,.65)">Diseñar guías con ejercicio de lectura, escritura y lenguaje.</p></div><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Acompañamiento</h3><p style="color:rgba(255,255,255,.65)">Monitorear avances y ajustar apoyos en equipo con la familia.</p></div></div></div><div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div></div></div></section>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Estrategias psicoeducativas inclusivas para el aprendizaje con necesidades especiales.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li><li><a href="index.html#mexico">Contexto México</a></li><li><a href="index.html#rol">Rol del Psicólogo</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer><script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 
-        const diccionario = {
-            facil: [
-                { palabra: 'CASA', silabas: ['CA', 'SA'] },
-                { palabra: 'GATO', silabas: ['GA', 'TO'] },
-                { palabra: 'LUNA', silabas: ['LU', 'NA'] },
-                { palabra: 'PATO', silabas: ['PA', 'TO'] }
-            ],
-            intermedio: [
-                { palabra: 'PELOTA', silabas: ['PE', 'LO', 'TA'] },
-                { palabra: 'CAMISA', silabas: ['CA', 'MI', 'SA'] },
-                { palabra: 'TOMATE', silabas: ['TO', 'MA', 'TE'] },
-                { palabra: 'ESCUELA', silabas: ['ES', 'CUE', 'LA'] }
-            ],
-            avanzado: [
-                { palabra: 'MARIPOSA', silabas: ['MA', 'RI', 'PO', 'SA'] },
-                { palabra: 'ELEFANTE', silabas: ['E', 'LE', 'FAN', 'TE'] },
-                { palabra: 'MURCIELAGO', silabas: ['MUR', 'CIE', 'LA', 'GO'] },
-                { palabra: 'TELEVISION', silabas: ['TE', 'LE', 'VI', 'SION'] }
-            ]
-        };
-        const botonesDif = document.querySelectorAll('.difficulty-btn');
-        const palabraGuia = document.getElementById('palabraGuia');
-        const etapaBadge = document.getElementById('etapaBadge');
-        const instruccion = document.getElementById('instruccion');
-        const letrasContainer = document.getElementById('letrasContainer');
-        const mensaje = document.getElementById('mensaje');
-        const btnSiguiente = document.getElementById('btnSiguiente');
-        let dificultadActual = 'facil';
-        let indicePalabra = 0;
-        let etapaActual = 1;
-        let elementosEsperados = [];
-        let elementosArmados = [];
+const diccionario={facil:[{palabra:'CASA',silabas:['CA','SA']},{palabra:'GATO',silabas:['GA','TO']},{palabra:'LUNA',silabas:['LU','NA']},{palabra:'PATO',silabas:['PA','TO']}],intermedio:[{palabra:'PELOTA',silabas:['PE','LO','TA']},{palabra:'CAMISA',silabas:['CA','MI','SA']},{palabra:'TOMATE',silabas:['TO','MA','TE']},{palabra:'ESCUELA',silabas:['ES','CUE','LA']}],avanzado:[{palabra:'MARIPOSA',silabas:['MA','RI','PO','SA']},{palabra:'ELEFANTE',silabas:['E','LE','FAN','TE']},{palabra:'MURCIELAGO',silabas:['MUR','CIE','LA','GO']},{palabra:'TELEVISION',silabas:['TE','LE','VI','SION']}]};
+const cont=document.getElementById('juego-container');let html='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-8);margin-bottom:var(--sp-28)">';
+['facil','intermedio','avanzado'].forEach(d=>{const bg=d==='facil'?'var(--c-obs)':'var(--c-pap)';const fg=d==='facil'?'#fff':'var(--c-obs)';html+='<button type="button" class="dif-btn" data-dif="'+d+'" style="padding:12px;border:1px solid var(--c-obs);background:'+bg+';color:'+fg+';cursor:pointer;font-family:var(--f-pri);font-size:var(--tx-bs);text-transform:capitalize">'+d+'</button>'});
+html+='</div><div style="background:#f5f5f5;padding:var(--sp-28);margin-bottom:var(--sp-28)"><p class="sl" style="display:block;margin-bottom:var(--sp-8)">Palabra</p><div id="palabraGuia" style="font-size:48px;font-weight:var(--fw-r);color:var(--c-obs);letter-spacing:4px">CASA</div></div><div id="progreso" style="min-height:48px;font-size:32px;font-weight:var(--fw-r);color:var(--c-obs);margin-bottom:var(--sp-28);letter-spacing:2px"></div><div id="letrasContainer" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-12);margin-bottom:var(--sp-28)"></div><div id="mensaje" style="font-weight:var(--fw-s);margin-bottom:var(--sp-28);color:var(--c-ink)"></div><button id="btnSiguiente" style="display:none;width:100%;padding:16px;background:var(--c-obs);color:#fff;border:none;cursor:pointer;font-family:var(--f-pri);font-size:var(--tx-bs)">Siguiente palabra</button>';
+cont.innerHTML=html;
+const botonesDif=cont.querySelectorAll('.dif-btn'),palabraGuia=cont.querySelector('#palabraGuia'),letrasContainer=cont.querySelector('#letrasContainer'),mensaje=cont.querySelector('#mensaje'),btnSiguiente=cont.querySelector('#btnSiguiente'),progreso=cont.querySelector('#progreso');
+let dificultadActual='facil',indicePalabra=0,etapaActual=1,elementosEsperados=[],elementosArmados=[];
+function iniciarJuego(){const p=diccionario[dificultadActual][indicePalabra];palabraGuia.innerText=p.palabra;mensaje.innerText='';btnSiguiente.style.display='none';elementosArmados=[];elementosEsperados=etapaActual===1?p.palabra.split(''):p.silabas;const opciones=[...elementosEsperados].sort(()=>Math.random()-0.5);letrasContainer.innerHTML='';opciones.forEach(t=>{const btn=document.createElement('button');btn.type='button';btn.style.cssText='padding:16px;font-size:20px;border:2px solid var(--c-obs);background:var(--c-pap);cursor:pointer;font-family:var(--f-pri);font-weight:var(--fw-s);transition:all 0.2s;border-radius:0';btn.innerText=t;btn.onclick=()=>seleccionarOpcion(t,btn);letrasContainer.appendChild(btn)});actualizarProgreso()}
+function seleccionarOpcion(t,b){const e=elementosEsperados[elementosArmados.length];if(t===e){elementosArmados.push(t);b.style.background='var(--c-obs)';b.style.color='#fff';b.disabled=true;actualizarProgreso();if(elementosArmados.length===elementosEsperados.length){mensaje.innerText=etapaActual===1?'¡Perfecto! Vamos a la siguiente etapa.':'¡Excelente! Has completado la palabra.';btnSiguiente.style.display='block';btnSiguiente.innerText=etapaActual===1?'Siguiente: sílabas':'Reiniciar palabra'}}else{b.style.borderColor='#ef4444';b.style.color='#ef4444';setTimeout(()=>{b.style.borderColor='var(--c-obs)';b.style.color='var(--c-obs)'},400)}}
+function actualizarProgreso(){progreso.innerText=elementosArmados.join(etapaActual===1?' ':' - ')}
+function avanzarJuego(){if(etapaActual===1){etapaActual=2}else{etapaActual=1;indicePalabra=(indicePalabra+1)%diccionario[dificultadActual].length}iniciarJuego()}
+botonesDif.forEach(btn=>{btn.addEventListener('click',()=>{dificultadActual=btn.dataset.dif;indicePalabra=0;etapaActual=1;botonesDif.forEach(el=>{el.style.background='var(--c-pap)';el.style.color='var(--c-obs)'});btn.style.background='var(--c-obs)';btn.style.color='#fff';iniciarJuego()})});
+btnSiguiente.addEventListener('click',avanzarJuego);iniciarJuego();
 
-        function iniciarJuego() {
-            const palabraInfo = diccionario[dificultadActual][indicePalabra];
-            palabraGuia.innerText = palabraInfo.palabra;
-            mensaje.innerText = '';
-            btnSiguiente.style.display = 'none';
-            elementosArmados = [];
-            elementosEsperados = etapaActual === 1 ? palabraInfo.palabra.split('') : palabraInfo.silabas;
-            etapaBadge.innerText = etapaActual === 1 ? 'Etapa 1: Letras' : 'Etapa 2: Sílabas';
-            etapaBadge.className = `inline-flex items-center px-4 py-2 rounded-full ${etapaActual === 1 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'} font-semibold`;
-            instruccion.innerText = etapaActual === 1 ? '¡Ordena las letras!' : '¡Ahora arma la palabra por sílabas!';
-            const opciones = [...elementosEsperados].sort(() => Math.random() - 0.5);
-            letrasContainer.innerHTML = '';
-            opciones.forEach(texto => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'letter-button';
-                btn.innerText = texto;
-                btn.onclick = () => seleccionarOpcion(texto, btn);
-                letrasContainer.appendChild(btn);
-            });
-            actualizarProgreso();
-        }
-
-        function seleccionarOpcion(texto, boton) {
-            const esperado = elementosEsperados[elementosArmados.length];
-            if (texto === esperado) {
-                elementosArmados.push(texto);
-                boton.classList.add('correct');
-                boton.disabled = true;
-                actualizarProgreso();
-                if (elementosArmados.length === elementosEsperados.length) {
-                    mensaje.innerText = etapaActual === 1 ? '¡Perfecto! Vamos a la siguiente etapa.' : '¡Excelente! Has completado la palabra.';
-                    btnSiguiente.style.display = 'block';
-                    btnSiguiente.innerText = etapaActual === 1 ? 'Siguiente: sílabas' : 'Reiniciar palabra';
-                }
-            } else {
-                boton.style.borderColor = '#ef4444';
-                boton.style.color = '#ef4444';
-                setTimeout(() => {
-                    boton.style.borderColor = '#2563eb';
-                    boton.style.color = '#0f172a';
-                }, 400);
-            }
-        }
-
-        function actualizarProgreso() {
-            const display = elementosArmados.join(etapaActual === 1 ? ' ' : ' - ');
-            const faltantes = (etapaActual === 1 ? '_ ' : '___ ').repeat(elementosEsperados.length - elementosArmados.length);
-            letrasContainer.previousElementSibling && (document.getElementById('progreso').innerText = display + faltantes);
-        }
-
-        function avanzarJuego() {
-            if (etapaActual === 1) {
-                etapaActual = 2;
-            } else {
-                etapaActual = 1;
-                indicePalabra = (indicePalabra + 1) % diccionario[dificultadActual].length;
-            }
-            iniciarJuego();
-        }
-
-        botonesDif.forEach(btn => {
-            btn.addEventListener('click', () => {
-                dificultadActual = btn.id.replace('btn-', '');
-                indicePalabra = 0;
-                etapaActual = 1;
-                botonesDif.forEach(el => el.classList.remove('bg-emerald-600', 'text-white'));
-                btn.classList.add('bg-emerald-600', 'text-white');
-                iniciarJuego();
-            });
-        });
-
-        btnSiguiente.addEventListener('click', avanzarJuego);
-        iniciarJuego();
-    </script>
-</body>
-</html>
+</script></body></html>

@@ -1,173 +1,41 @@
-﻿<!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altas Capacidades - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); }
-        .detail-card { border-radius: 30px; box-shadow: 0 28px 80px rgba(15,23,42,.08); }
-        .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.1rem; border-radius: 9999px; font-weight: 700; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altas Capacidades - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
-                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600">Inicio</a>
-                    <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600">Recursos</a>
-                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
-                    <button class="bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition" onclick="window.location='index.html';">Volver</button>
-                </div>
-                <div class="md:hidden">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600">Inicio</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600">Recursos</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
-                <button class="w-full text-left text-violet-600 font-semibold" onclick="window.location='index.html';">Volver a la página principal</button>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-panel text-white py-12 md:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill" style="background: rgba(124, 58, 237, .16); color: #6d28d9;">Altas Capacidades</span>
-                    <h1 class="mt-6 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">Equilibrar el potencial con apoyo emocional</h1>
-                    <p class="mt-5 text-lg leading-8 text-slate-100 max-w-2xl">El desafío de las altas capacidades es acompañar al talento con estructura, reconocimiento y oportunidades para que el aprendizaje sea significativo.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="detail-card p-6 bg-white text-slate-900">
-                        <h2 class="text-xl font-semibold">Creatividad guiada</h2>
-                        <p class="mt-3 text-slate-600">Organizar ideas ayuda a convertir el entusiasmo en resultados concretos.</p>
-                    </div>
-                    <div class="detail-card p-6 bg-white text-slate-900">
-                        <h2 class="text-xl font-semibold">Rutinas seguras</h2>
-                        <p class="mt-3 text-slate-600">Estructura y límites saludables generan calma y permiten un aprendizaje más sostenido.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-        <section class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2">
-            <article class="bg-white detail-card p-6 md:p-10 border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Comprender a los estudiantes con altas capacidades</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">No todos los estudiantes superdotados se adaptan fácilmente. Muchos tienen sensibilidad emocional, perfeccionismo o aburrimiento que afectan su motivación.</p>
-                <p class="text-slate-600 leading-relaxed">El papel del psicólogo es diseñar apoyos que estimulen su pensamiento sin generar presión excesiva.</p>
-            </article>
-            <div class="space-y-6">
-                <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-lg md:text-xl font-semibold text-slate-900 mb-3">Potenciar fortalezas</h3>
-                    <p class="text-slate-600">Transformar intereses en proyectos personales con metas claras y realistas.</p>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <h4 class="font-semibold text-slate-900">Curiosidad estructurada</h4>
-                        <p class="mt-3 text-slate-600">Ofrecer temas profundos en bloques de trabajo manejables.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <h4 class="font-semibold text-slate-900">Tiempo de descanso</h4>
-                        <p class="mt-3 text-slate-600">Pausas programadas evitan la sobrecarga cognitiva.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-white detail-card p-6 md:p-10 rounded-[32px] border border-slate-200">
-            <div class="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-violet-50 p-6 md:p-8 rounded-3xl border border-violet-100">
-                    <h3 class="text-lg md:text-xl font-semibold text-violet-900 mb-4">Afectividad</h3>
-                    <p class="text-slate-600">Reconocer emociones intensas y apoyarlas con escucha activa.</p>
-                </div>
-                <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-lg md:text-xl font-semibold text-slate-900 mb-4">Motivación</h3>
-                    <p class="text-slate-600">Plantear desafíos con significado personal, no solo con dificultad académica.</p>
-                </div>
-                <div class="bg-emerald-50 p-6 md:p-8 rounded-3xl border border-emerald-100">
-                    <h3 class="text-lg md:text-xl font-semibold text-emerald-900 mb-4">Autonomía</h3>
-                    <p class="text-slate-600">Promover decisiones sobre cómo y cuándo trabajar.</p>
-                </div>
-            </div>
-        </section>
-        <section class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2">
-            <div class="bg-slate-100 p-6 md:p-10 rounded-[32px] detail-card border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Estrategias efectivas</h2>
-                <ul class="space-y-4 text-slate-600">
-                    <li><strong>Aprendizaje por proyectos:</strong> trabajar temas profundos con entregables claros.</li>
-                    <li><strong>Mapas mentales:</strong> organizar información visualmente.</li>
-                    <li><strong>Retroalimentación positiva:</strong> valorar el proceso tanto como el resultado.</li>
-                    <li><strong>Flexibilidad:</strong> adaptar el ritmo según sus necesidades.</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 md:p-10 rounded-[32px] detail-card border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Actividad recomendada</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Una tarjeta de ideas para explorar cada semana. El estudiante elige un tema, investiga y comparte un hallazgo con el grupo.</p>
-                <div class="bg-violet-50 p-6 rounded-3xl border border-violet-100">
-                    <h3 class="text-lg font-semibold text-violet-900">Objetivo</h3>
-                    <p class="mt-2 text-slate-600">Promover pensamiento crítico sin generar ansiedad por la calificación.</p>
-                </div>
-            </div>
-        </section>
-        <section class="bg-white detail-card p-6 md:p-10 rounded-[32px] border border-slate-200">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Rol del psicólogo</h2>
-            <div class="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Evaluar</h3>
-                    <p class="text-slate-600 text-sm">Identificar fortalezas y necesidades en el aprendizaje.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Acompañar</h3>
-                    <p class="text-slate-600 text-sm">Diseñar apoyos con la familia y la escuela.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                    <h3 class="font-semibold text-slate-900 mb-2">Guiar</h3>
-                    <p class="text-slate-600 text-sm">Fomentar metas personales y bienestar emocional.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center flex-wrap"><i data-lucide="brain" class="h-5 w-5 mr-2 flex-shrink-0"></i> Psicolearning</h3>
-                <p class="text-xs sm:text-sm text-slate-400">Estrategias psicoeducativas para un desarrollo académico y emocional equilibrado.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        lucide.createIcons();
-        const btnMenuAltas = document.getElementById('btn-menu');
-        const menuMovilAltas = document.getElementById('menu-movil');
-        let menuAbiertoAltas = false;
-        btnMenuAltas.addEventListener('click', () => {
-            menuAbiertoAltas = !menuAbiertoAltas;
-            menuMovilAltas.classList.toggle('hidden', !menuAbiertoAltas);
-        });
-    </script>
-</body>
-</html>
+<body><nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#intro">Introducción</a></li><li><a href="#estrategias">Estrategias</a></li><li><a href="#rol">Rol del Psicólogo</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#intro" class="opm">Introducción</a><a href="#estrategias" class="opm">Estrategias</a><a href="#rol" class="opm">Rol del Psicólogo</a><a href="index.html" class="opm">Volver al Inicio</a></div><section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><span class="pg-pill">Altas Capacidades</span><h1 class="hero-hl">Equilibrar el potencial con apoyo emocional</h1><p class="hero-sb">El desafío de las altas capacidades es acompañar al talento con estructura, reconocimiento y oportunidades para que el aprendizaje sea significativo.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);max-width:600px;margin:var(--sp-48) auto 0;text-align:left"><div class="pg-card"><h2>Creatividad guiada</h2><p>Organizar ideas ayuda a convertir el entusiasmo en resultados concretos.</p></div><div class="pg-card"><h2>Rutinas seguras</h2><p>Estructura y límites saludables generan calma y permiten un aprendizaje más sostenido.</p></div></div></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
+<section id="intro" class="cs"><div class="ctn"><div class="content-grid fu">
+<div class="content-card"><h2>Comprender a los estudiantes con altas capacidades</h2><p>No todos los estudiantes superdotados se adaptan fácilmente. Muchos tienen sensibilidad emocional, perfeccionismo o aburrimiento que afectan su motivación.</p><p style="margin-top:var(--sp-12)">El papel del psicólogo es diseñar apoyos que estimulen su pensamiento sin generar presión excesiva.</p></div>
+<div style="display:flex;flex-direction:column;gap:var(--sg)"><div class="info-block"><h3>Potenciar fortalezas</h3><p>Transformar intereses en proyectos personales con metas claras y realistas.</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--eg)"><div class="info-block"><h3>Curiosidad estructurada</h3><p>Ofrecer temas profundos en bloques de trabajo manejables.</p></div><div class="info-block"><h3>Tiempo de descanso</h3><p>Pausas programadas evitan la sobrecarga cognitiva.</p></div></div></div>
+</div></div></section>
+<section class="cs cs-g"><div class="ctn"><div class="fu"><p class="sl">Dimensiones</p><h2 class="sh sh-xs">Áreas clave de atención</h2></div>
+<div class="signs-grid fu">
+<div class="sign-card"><h3>Afectividad</h3><p>Reconocer emociones intensas y apoyarlas con escucha activa.</p></div>
+<div class="sign-card"><h3>Motivación</h3><p>Plantear desafíos con significado personal, no solo con dificultad académica.</p></div>
+<div class="sign-card"><h3>Autonomía</h3><p>Promover decisiones sobre cómo y cuándo trabajar.</p></div>
+</div></div></section>
+<section id="estrategias" class="cs"><div class="ctn"><div class="fu"><p class="sl">Estrategias</p><h2 class="sh sh-xs">Enfoques efectivos</h2></div>
+<div class="content-grid fu">
+<div class="content-card"><h2>Estrategias efectivas</h2><ul class="content-list"><li><strong>Aprendizaje por proyectos:</strong> trabajar temas profundos con entregables claros.</li><li><strong>Mapas mentales:</strong> organizar información visualmente.</li><li><strong>Retroalimentación positiva:</strong> valorar el proceso tanto como el resultado.</li><li><strong>Flexibilidad:</strong> adaptar el ritmo según sus necesidades.</li></ul></div>
+<div class="content-card"><h2>Actividad recomendada</h2><p>Una tarjeta de ideas para explorar cada semana. El estudiante elige un tema, investiga y comparte un hallazgo con el grupo.</p><div class="info-block" style="margin-top:var(--sp-28)"><h3>Objetivo</h3><p>Promover pensamiento crítico sin generar ansiedad por la calificación.</p></div></div>
+</div></div></section>
+<section id="rol" class="rs"><div class="ctn"><div class="rg fu"><div class="rc"><h2>Rol del psicólogo</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sg);margin-top:var(--sp-48)"><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Evaluar</h3><p style="color:rgba(255,255,255,.65)">Identificar fortalezas y necesidades en el aprendizaje.</p></div><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Acompañar</h3><p style="color:rgba(255,255,255,.65)">Diseñar apoyos con la familia y la escuela.</p></div><div class="info-block" style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">Guiar</h3><p style="color:rgba(255,255,255,.65)">Fomentar metas personales y bienestar emocional.</p></div></div></div><div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div></div></div></section>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Estrategias psicoeducativas para un desarrollo académico y emocional equilibrado.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li><li><a href="index.html#mexico">Contexto México</a></li><li><a href="index.html#rol">Rol del Psicólogo</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer><script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+</script></body></html>

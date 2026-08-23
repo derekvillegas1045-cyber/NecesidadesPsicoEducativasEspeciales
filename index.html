@@ -1,618 +1,258 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psicolearning - Necesidades Psicoeducativas Especiales</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .card.active .card-content {
-            display: block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psicolearning — Necesidades Psicoeducativas Especiales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--c-obs:#000;--c-pap:#fff;--c-ink:#181818;--c-fg:#6d6d6d;--c-sp:#636363;--c-am:#9a9a9a;--gr-ir:linear-gradient(90deg,rgb(160,224,171),rgb(255,172,46) 50%,rgb(165,45,37));--f-pri:'Inter',ui-sans-serif,system-ui,sans-serif;--f-hd:'Raleway',ui-sans-serif,system-ui,sans-serif;--tx-cap:12px;--tx-bs:16px;--tx-bd:18px;--tx-sh:39px;--tx-shl:45px;--tx-hd:78px;--tx-ds:225px;--lh-ds:1.25;--lh-hd:1.1;--lh-sh:1.19;--lh-shl:1.15;--fw-l:300;--fw-r:400;--fw-s:600;--sp-8:8px;--sp-12:12px;--sp-16:16px;--sp-20:20px;--sp-28:28px;--sp-32:32px;--sp-40:40px;--sp-48:48px;--sp-64:64px;--sp-80:80px;--sp-96:96px;--pw:1078px;--sg:40px;--cp:28px;--eg:14px;--rf:75px;--ez:cubic-bezier(0.19,1,0.22,1);--dl:1.25s;--dm:0.8s;--ds:0.4s}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-pri);font-weight:var(--fw-r);color:var(--c-obs);background:var(--c-pap);line-height:1.21;font-size:var(--tx-bd);min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;transition:opacity var(--ds) ease}a:hover{opacity:.7}
+img{max-width:100%;display:block}
+.ctn{max-width:var(--pw);margin:0 auto;padding:0 var(--sp-28)}
+@media(max-width:768px){.ctn{padding:0 var(--sp-16)}}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 var(--sp-28);background:transparent;transition:background var(--dm) var(--ez)}
+.nav.scrolled{background:rgba(0,0,0,.88);backdrop-filter:blur(12px)}
+.nav-in{max-width:var(--pw);margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-lg{font-size:15px;color:#fff;font-weight:var(--fw-r)}
+.nav-lk{display:flex;align-items:center;gap:var(--sp-20);list-style:none}
+.nav-lk a{font-size:12px;color:rgba(255,255,255,.8);letter-spacing:.02em;line-height:1.19;transition:color var(--ds) ease}
+.nav-lk a:hover{color:#fff;opacity:1}
+.nav-mb{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:4px}
+.nav-mb svg{width:22px;height:22px}
+.mm{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(0,0,0,.95);backdrop-filter:blur(12px);padding:var(--sp-20) var(--sp-28);z-index:99}
+.mm.open{display:block}
+.mm a{display:block;font-size:14px;color:rgba(255,255,255,.85);padding:var(--sp-12) 0;border-bottom:1px solid rgba(255,255,255,.06)}
+@media(max-width:1024px){.nav-lk{display:none}.nav-mb{display:block}}
+@media(max-width:768px){.nav{padding:0 var(--sp-16)}}
+
+/* Hero */
+.hero{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--c-obs)}
+.hero-bd{position:absolute;inset:0;background:var(--gr-ir);opacity:.85;animation:hS 12s ease-in-out infinite alternate}
+@keyframes hS{0%{filter:hue-rotate(0deg) brightness(.7);transform:scale(1.05)}50%{filter:hue-rotate(15deg) brightness(.8);transform:scale(1.1)}100%{filter:hue-rotate(-10deg) brightness(.75);transform:scale(1.08)}}
+.hero-ov{position:absolute;inset:0;background:rgba(0,0,0,.4)}
+.hero-ct{position:relative;z-index:2;text-align:center;padding:var(--sp-80) var(--sp-28);width:100%}
+.hero-hl{font-family:var(--f-pri);font-size:clamp(40px,10vw,120px);font-weight:var(--fw-r);line-height:var(--lh-ds);color:#fff;max-width:800px;margin:0 auto var(--sp-32)}
+.hero-sb{font-size:clamp(14px,2.5vw,var(--tx-bd));font-weight:var(--fw-l);color:rgba(255,255,255,.7);max-width:520px;margin:0 auto var(--sp-40);line-height:1.58}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 28px;border-radius:var(--rf);font-family:var(--f-pri);font-size:15px;font-weight:var(--fw-r);background:transparent;cursor:pointer;transition:all var(--dm) var(--ez);text-decoration:none}
+.pill-d{border:1px solid rgba(255,255,255,.3);color:#fff}
+.pill-d:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);opacity:1}
+@media(max-width:768px){.hero-ct{padding:var(--sp-64) var(--sp-16)}.hero-hl{margin-bottom:var(--sp-20)}.hero-sb{margin-bottom:var(--sp-28)}}
+
+/* Scroll Indicator */
+.si{position:absolute;bottom:var(--sp-28);left:var(--sp-28);z-index:5;width:80px;height:80px}
+.si svg{width:100%;height:100%;animation:ss 10s linear infinite}
+@keyframes ss{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.si text{font-size:7px;fill:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:768px){.si{display:none}}
+
+/* Sections */
+.cs{padding:var(--sp-80) 0}
+.cs-d{background:var(--c-obs);color:#fff}
+.cs-d .sh{color:#fff}
+.cs-d .sl{color:rgba(255,255,255,.4)}
+.cs-g{background:#f8f8f8}
+@media(max-width:768px){.cs{padding:var(--sp-48) 0}}
+
+/* Labels & Headings */
+.sl{font-size:var(--tx-cap);color:var(--c-fg);text-transform:uppercase;letter-spacing:.15em;margin-bottom:var(--sp-8)}
+.sh{font-family:var(--f-hd);font-size:clamp(32px,6vw,var(--tx-hd));font-weight:var(--fw-l);line-height:var(--lh-hd);color:var(--c-obs);margin-bottom:var(--sp-32)}
+.sh-s{font-size:var(--tx-shl);line-height:var(--lh-shl)}
+.sh-xs{font-size:var(--tx-sh);line-height:var(--lh-sh)}
+@media(max-width:768px){.sh{margin-bottom:var(--sp-20)}.sh-s,.sh-xs{font-size:28px;line-height:1.2}}
+
+/* Editorial Grid */
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);align-items:start}
+@media(max-width:768px){.eg{grid-template-columns:1fr;gap:var(--sp-28)}}
+
+/* Definition Card */
+.dc{padding:var(--cp);border-left:1px solid var(--c-obs)}
+.dc h3{font-size:clamp(24px,4vw,var(--tx-sh));font-weight:var(--fw-r);line-height:var(--lh-sh);margin-bottom:var(--sp-20)}
+.dc p{font-size:var(--tx-bs);color:var(--c-ink);line-height:1.58;margin-bottom:var(--sp-12)}
+
+/* Feature Items */
+.fi{display:flex;gap:var(--sp-20);padding:var(--sp-16) 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.fi:last-child{border-bottom:none}
+.fn{font-size:var(--tx-bs);color:var(--c-fg);flex-shrink:0;width:24px}
+.fi h4{font-size:var(--tx-bd);margin-bottom:var(--sp-8)}
+.fi p{font-size:var(--tx-bs);color:var(--c-fg);line-height:1.58}
+
+/* Concepts Grid */
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sg)}
+@media(max-width:1024px){.cg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.cc{padding:var(--cp);border-top:1px solid var(--c-obs);cursor:pointer;transition:all var(--dm) var(--ez)}
+.cc h3{font-size:var(--tx-bd);margin-bottom:var(--sp-12)}
+.cc p{font-size:var(--tx-bs);color:var(--c-fg);line-height:1.58;max-height:0;overflow:hidden;transition:max-height var(--dl) var(--ez),opacity var(--dm) var(--ez);opacity:0}
+.cc.active p{max-height:300px;opacity:1}
+
+/* Carousel */
+.cw{position:relative;max-width:700px;margin:0 auto}
+.cc2{overflow:hidden;background:#f5f5f5}
+.ct2{display:flex;transition:transform var(--dl) var(--ez)}
+.cs2{flex-shrink:0;width:100%;height:clamp(240px,45vw,420px);object-fit:contain;background:#f5f5f5}
+.cb{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:var(--rf);border:1px solid rgba(0,0,0,.2);background:rgba(255,255,255,.9);color:var(--c-obs);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--dm) var(--ez);opacity:0}
+.cw:hover .cb{opacity:1}
+@media(max-width:768px){.cb{opacity:1;width:36px;height:36px}}
+.cb.pv{left:-18px}
+.cb.nx{right:-18px}
+@media(max-width:768px){.cb.pv{left:4px}.cb.nx{right:4px}}
+.cb:hover{background:var(--c-obs);color:#fff;border-color:var(--c-obs)}
+.ci{display:flex;justify-content:center;gap:var(--eg);margin-top:var(--sp-20)}
+.cd{width:8px;height:8px;border-radius:var(--rf);background:var(--c-am);border:none;cursor:pointer;transition:background var(--ds) ease}
+.cd.active{background:var(--c-obs)}
+
+/* Video */
+.ve{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden}
+.ve iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+/* Strategy Cards */
+.sg2{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--sg)}
+.sc{padding:var(--cp);border-top:1px solid var(--c-obs);display:block;color:inherit;transition:all var(--dm) var(--ez)}
+.sc:hover{opacity:1;border-top-width:2px}
+.sc .ic{width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp-16);color:var(--c-obs)}
+.sc .ic svg{width:20px;height:20px}
+.sc h3{font-size:var(--tx-bs);margin-bottom:var(--sp-8)}
+.sc p{font-size:14px;color:var(--c-fg);line-height:1.5}
+@media(max-width:768px){.sg2{grid-template-columns:1fr 1fr;gap:var(--sp-16)}}
+@media(max-width:480px){.sg2{grid-template-columns:1fr}}
+
+/* Legal Grid */
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sg)}
+@media(max-width:1024px){.lg{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.lg{grid-template-columns:1fr}}
+.lc{padding:var(--cp);border-top:1px solid var(--c-obs)}
+.lc .iw{width:32px;height:32px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp-16)}
+.lc .iw svg{width:16px;height:16px}
+.lc h3{font-size:var(--tx-bs);margin-bottom:var(--sp-8)}
+.lc p{font-size:14px;color:var(--c-fg);line-height:1.5}
+
+/* Rol Section */
+.rs{background:var(--c-obs);padding:var(--sp-80) 0}
+.rg{display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:768px){.rg{grid-template-columns:1fr}.rs{padding:var(--sp-48) 0}}
+.rc{padding:var(--sp-40);color:#fff}
+@media(max-width:768px){.rc{padding:var(--sp-28) var(--sp-16)}}
+.rc h2{font-size:clamp(24px,4vw,var(--tx-sh));font-weight:var(--fw-r);line-height:var(--lh-sh);margin-bottom:var(--sp-20)}
+.rc>p{font-size:var(--tx-bs);color:rgba(255,255,255,.5);margin-bottom:var(--sp-28);line-height:1.58}
+.rl{list-style:none;display:flex;flex-direction:column;gap:var(--sp-20)}
+.rl li{display:flex;gap:var(--sp-12);align-items:flex-start}
+.rl .nm{flex-shrink:0;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.2);border-radius:var(--rf);margin-top:2px}
+.rl p{font-size:var(--tx-bs);color:rgba(255,255,255,.6);line-height:1.58}
+.rl strong{color:#fff;font-weight:var(--fw-r)}
+.rv{display:none}
+@media(min-width:769px){.rv{display:flex;align-items:center;justify-content:center;overflow:hidden}.rv svg{width:140px;height:140px;color:rgba(255,255,255,.06)}}
+
+/* Footer */
+.ft{background:var(--c-ink);padding:var(--sp-48) 0}
+.fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sg)}
+@media(max-width:1024px){.fg{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.fg{grid-template-columns:1fr;gap:var(--sp-32)}}
+.ft h3,.ft h4{font-size:var(--tx-bs);font-weight:var(--fw-r);color:#fff;margin-bottom:var(--sp-16)}
+.ft p,.ft li{font-size:var(--tx-cap);color:var(--c-fg);line-height:1.4}
+.ft li{margin-bottom:var(--sp-8)}
+.ft li a{color:var(--c-fg)}.ft li a:hover{color:#fff;opacity:1}
+.fbt{margin-top:var(--sp-32);padding-top:var(--sp-16);border-top:1px solid rgba(255,255,255,.06);font-size:var(--tx-cap);color:var(--c-fg);text-align:center}
+
+/* Transitions */
+.fu{opacity:0;transform:translateY(24px);transition:opacity var(--dl) var(--ez),transform var(--dl) var(--ez)}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* Search Panel */
+.search-wrap{position:relative}
+.search-btn{position:absolute;top:0;right:0;width:36px;height:36px;border-radius:var(--rf);border:1px solid var(--c-obs);background:var(--c-pap);color:var(--c-obs);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--dm) var(--ez);z-index:10}
+.search-btn:hover{background:var(--c-obs);color:#fff}
+.search-btn svg{width:16px;height:16px}
+.search-panel{display:none;position:absolute;top:44px;right:0;width:min(400px,100%);background:var(--c-pap);border:1px solid rgba(0,0,0,.1);padding:var(--sp-20);z-index:20;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.search-panel.open{display:block}
+.search-input{width:100%;padding:10px 14px;border:1px solid var(--c-obs);border-radius:0;font-family:var(--f-pri);font-size:14px;color:var(--c-obs);background:var(--c-pap);outline:none;transition:border-color var(--ds) ease}
+.search-input:focus{border-color:var(--c-fg)}
+.search-input::placeholder{color:var(--c-am)}
+.search-go{width:100%;margin-top:var(--sp-8);padding:10px;border:1px solid var(--c-obs);border-radius:var(--rf);background:var(--c-obs);color:#fff;font-family:var(--f-pri);font-size:14px;cursor:pointer;transition:all var(--dm) var(--ez)}
+.search-go:hover{background:var(--c-ink)}
+.search-go:disabled{opacity:.5;cursor:not-allowed}
+.search-result{margin-top:var(--sp-12);font-size:14px;color:var(--c-fg);line-height:1.58;min-height:20px}
+.search-result .loading{color:var(--c-am);font-style:italic}
+.search-result strong{color:var(--c-obs);font-weight:var(--fw-s)}
+.search-result em{font-style:italic;color:var(--c-fg)}
+.search-result ul,.search-result ol{padding-left:18px;margin:8px 0}
+.search-result li{margin-bottom:4px}
+.search-result li::marker{color:var(--c-am)}
+.search-result p{margin-bottom:8px}
+.search-result p:last-child{margin-bottom:0}
+.search-result code{background:rgba(0,0,0,.06);padding:1px 5px;font-size:13px;font-family:'SF Mono',Consolas,monospace}
+.search-close{position:absolute;top:var(--sp-8);right:var(--sp-8);background:none;border:none;color:var(--c-fg);cursor:pointer;padding:2px}
+.search-close svg{width:14px;height:14px}
+@media(max-width:768px){.search-panel{width:calc(100vw - 32px);right:-8px}}
+</style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
+<body>
+<nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#definicion">Definición</a></li><li><a href="#conceptos">Conceptos</a></li><li><a href="#galeria">Galería</a></li><li><a href="#estrategias">Estrategias</a></li><li><a href="#mexico">México</a></li><li><a href="#rol">Rol</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#definicion" class="opm">Definición</a><a href="#conceptos" class="opm">Conceptos</a><a href="#galeria" class="opm">Galería</a><a href="#estrategias" class="opm">Estrategias</a><a href="#mexico" class="opm">Contexto México</a><a href="#rol" class="opm">Rol del Psicólogo</a></div>
 
-    <!-- Navegación -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
-                    <a href="index.html#inicio" class="ml-2 text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
-                        Psicolearning
-                    </a>
-                </div>
+<section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><h1 class="hero-hl">Psicolearning</h1><p class="hero-sb">Somos estudiantes de psicología de la UDG que buscan difundir información sobre las Necesidades Psicoeducativas Especiales. En México 2 de cada 10 personas presentan alguna dificultad para el aprendizaje.</p><a href="#mexico" class="pill pill-d">Contexto Legal</a></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
 
-                <!-- Menú de Escritorio -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-                    <a href="#definicion" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Definición</a>
-                    <a href="#conceptos" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conceptos</a>
-                    <a href="#galeria" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Galería</a>
-                    <a href="#estrategias" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Estrategias</a>
-                    <a href="#mexico" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contexto México</a>
-                    <a href="#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psicólogo</a>
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">
-                        Contacto
-                        <span class="sr-only">Contacto</span>
-                    </button>
-                </div>
+<section id="definicion" class="cs" data-context="Definición de Necesidades Psicoeducativas Especiales (NPE), concepto de Barreras para el Aprendizaje y la Participación (BAP)."><div class="ctn"><div class="fu search-wrap"><div><p class="sl">Introducción</p><h2 class="sh">¿Qué son las NPE?</h2></div><button class="search-btn" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel"><button class="search-close" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" type="text" placeholder="Pregunta sobre las NPE..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result"></div></div></div><div class="eg fu"><div class="dc"><h3>Definición Conceptual</h3><p>Las <strong>Necesidades Psicoeducativas Especiales (NPE)</strong>, o Barreras para el Aprendizaje y la Participación (BAP), no son una característica intrínseca del alumno.</p><p>Surgen de la interacción entre el estudiante y su contexto. Un alumno tiene una NPE cuando presenta dificultades mayores que el resto de sus compañeros para acceder a los aprendizajes, requiriendo <strong>ajustes razonables</strong> o recursos adicionales.</p></div><div><div class="fi"><span class="fn">01</span><div><h4>No es solo "Discapacidad"</h4><p>Incluye discapacidad (motriz, intelectual, sensorial), trastornos del desarrollo, aptitudes sobresalientes, o situaciones psicosociales y emocionales.</p></div></div><div class="fi"><span class="fn">02</span><div><h4>Enfoque Humanista</h4><p>Nos enfocamos en el potencial de desarrollo y en la salud emocional, no en la etiqueta diagnóstica como limitante.</p></div></div></div></div></div></section>
 
-                <!-- Botón de Menú Móvil -->
-                <div class="md:hidden flex items-center">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none">
-                        <i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<section id="conceptos" class="cs" data-context="Conceptos fundamentales: Déficit, Trastorno y Discapacidad en el contexto de necesidades psicoeducativas especiales."><div class="ctn"><div class="fu search-wrap"><div><p class="sl">Conceptos</p><h2 class="sh">Conceptos Fundamentales</h2></div><button class="search-btn" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel"><button class="search-close" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" type="text" placeholder="Pregunta sobre déficit, trastorno, discapacidad..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result"></div></div></div><div class="cg fu"><div class="cc" onclick="this.classList.toggle('active')"><h3>Déficit</h3><p>Pérdida o anormalidad de una estructura o función psicológica, fisiológica o anatómica.</p></div><div class="cc" onclick="this.classList.toggle('active')"><h3>Trastorno</h3><p>Alteración del desarrollo o funcionamiento en áreas cognitivas, emocionales o conductuales que interfieren con el aprendizaje.</p></div><div class="cc" onclick="this.classList.toggle('active')"><h3>Discapacidad</h3><p>Resultado de la interacción entre las características del individuo y las barreras del entorno, no inherente al individuo.</p></div></div></div></section>
 
-        <!-- Menú Móvil (Oculto por defecto) -->
-        <div id="menu-movil" class="hidden md:hidden bg-white border-b border-slate-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
-                <a href="#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
-                <a href="#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
-                <a href="#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
-                <a href="#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
-                <a href="#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
-                <a href="#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
-            </div>
-        </div>
-    </nav>
+<section id="galeria" class="cs" data-context="Galería histórica sobre la evolución del concepto de Necesidades Psicoeducativas Especiales en México."><div class="ctn"><div class="fu search-wrap"><div><p class="sl">Galería</p><h2 class="sh sh-s">Evolución del concepto NPE</h2></div><button class="search-btn" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel"><button class="search-close" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" type="text" placeholder="Pregunta sobre la historia de las NPE..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result"></div></div></div><div class="cw fu"><div class="cc2"><div class="ct2" id="carousel-track"><img src="Images/1.jpeg" alt="1" class="cs2"><img src="Images/2.jpeg" alt="2" class="cs2"><img src="Images/3.jpeg" alt="3" class="cs2"><img src="Images/4.jpeg" alt="4" class="cs2"><img src="Images/5.jpeg" alt="5" class="cs2"><img src="Images/6.jpeg" alt="6" class="cs2"><img src="Images/7.jpeg" alt="7" class="cs2"><img src="Images/8.jpeg" alt="8" class="cs2"><img src="Images/9.jpeg" alt="9" class="cs2"><img src="Images/10.jpeg" alt="10" class="cs2"><img src="Images/11.jpeg" alt="11" class="cs2"><img src="Images/12.jpeg" alt="12" class="cs2"><img src="Images/13.jpeg" alt="13" class="cs2"><img src="Images/14.jpeg" alt="14" class="cs2"><img src="Images/15.jpeg" alt="15" class="cs2"></div></div><button class="cb pv" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19l-7-7 7-7"/></svg></button><button class="cb nx" aria-label="Siguiente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg></button><div class="ci" id="carousel-indicators"></div></div></div></section>
 
-    <!-- Sección Hero -->
-    <div id="inicio" class="relative bg-gradient-to-r from-indigo-600 to-blue-500 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div class="lg:w-2/3">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
-                    ¿Quienes somos?
-                </h1>
-                <p class="text-xl md:text-2xl text-indigo-100 mb-8 max-w-2xl">
-                    Somos un grupo de estudiantes de la licenciatura en psicología de la Universidad de Guadalajara que buscan facilitar información
-                    con tintes de divulgación sobre las Necesidades Psicoeduativas Especiales. En México 2 de cada 10 personas presentan alguna dificultad
-                    para el aprendizaje, por lo que tenemos el objetivo de concientizar a la población.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#mexico" class="bg-indigo-700 bg-opacity-50 text-white border border-indigo-400 px-6 py-3 rounded-lg font-bold hover:bg-opacity-70 transition-colors">
-                        Contexto Legal
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Ola Decorativa -->
-        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-slate-50"></path>
-            </svg>
-        </div>
-    </div>
+<section class="cs"><div class="ctn"><div class="ve fu"><iframe src="https://www.youtube.com/embed/W0MkjnVtwpg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></section>
 
-    <!-- Sección Definición -->
-    <section id="definicion" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Introducción</h2>
-            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                ¿Qué son las NPE?
-            </p>
-            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
-                Más allá de la discapacidad: un enfoque centrado en las barreras del entorno.
-            </p>
-        </div>
+<section id="estrategias" class="cs" data-context="Estrategias psicoeducativas para distintas necesidades: altas capacidades, dislexia, TDAH, déficits sensoriales y motor, trastornos del desarrollo."><div class="ctn"><div class="fu search-wrap"><div><p class="sl">Recursos</p><h2 class="sh">Estrategias</h2></div><button class="search-btn" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel"><button class="search-close" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" type="text" placeholder="Pregunta sobre estrategias psicoeducativas..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result"></div></div></div><div class="sg2 fu">
+<a href="altas-capacidades.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Altas Capacidades</h3><p>Recursos para el desarrollo de altas capacidades intelectuales.</p></a>
+<a href="inteligencia-limitrofe.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Inteligencia Limítrofe</h3><p>Estrategias para el desarrollo de la inteligencia limítrofe.</p></a>
+<a href="dislexia.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Dislexia</h3><p>Recursos y estrategias para el apoyo con dislexia.</p></a>
+<a href="deficit-visual.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Déficit Visual</h3><p>Estrategias para el aprendizaje con vista limitada.</p></a>
+<a href="deficit-auditivo.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div><h3>Déficit Auditivo</h3><p>Recomendaciones para apoyar con pérdida auditiva.</p></a>
+<a href="discapacidad-intelectual.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Discapacidad Intelectual</h3><p>Estrategias concretas y apoyo práctico.</p></a>
+<a href="tdah.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>TDAH</h3><p>Estrategias con enfoque ejecutivo y motivacional.</p></a>
+<a href="trastorno-disruptivo.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3>Trastorno Disruptivo</h3><p>Regulación emocional y conexión efectiva.</p></a>
+<a href="trastorno-lenguaje.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Trastorno del Lenguaje</h3><p>Dificultades de adquisición y expresión del lenguaje.</p></a>
+<a href="trastorno-espectro-autista.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Trastorno del Espectro Autista</h3><p>Estrategias para apoyar a estudiantes con TEA.</p></a>
+<a href="negativista-desafiante.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/></svg></div><h3>Negativista Desafiante</h3><p>Comprensión del patrón de desafío.</p></a>
+<a href="deficit-motor.html" class="sc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Déficit Motor</h3><p>Adaptaciones prácticas para coordinación motora.</p></a>
+</div></div></section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 flex items-center">
-                    <i data-lucide="info" class="mr-2 text-indigo-500"></i> Definición Conceptual
-                </h3>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    Las <strong>Necesidades Psicoeducativas Especiales (NPE)</strong>, a menudo referidas como Barreras para el Aprendizaje y la Participación (BAP), no son una característica intrínseca del alumno.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    Surgen de la interacción entre el estudiante y su contexto (escolar, familiar, social). Un alumno tiene una NPE cuando presenta dificultades mayores que el resto de sus compañeros para acceder a los aprendizajes, requiriendo <strong>ajustes razonables</strong> o recursos adicionales para progresar.
-                </p>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-lucide="users" class="h-6 w-6"></i>
-                        </div>
-                    </div>
-                    <div class="ml-4">
-                        <h4 class="text-lg leading-6 font-medium text-slate-900">No es solo "Discapacidad"</h4>
-                        <p class="mt-2 text-base text-slate-500">
-                            Incluye discapacidad (motriz, intelectual, sensorial), pero también trastornos del desarrollo, aptitudes sobresalientes, o situaciones psicosociales y emocionales.
-                        </p>
-                    </div>
-                </div>
+<section id="mexico" class="cs cs-d" data-context="Contexto legal de las NPE en México: Artículo 3° Constitucional, USAER, CAM, y el modelo de la Nueva Escuela Mexicana."><div class="ctn"><div class="fu search-wrap"><div><p class="sl">Contexto Nacional</p><h2 class="sh">Las NPE en México</h2></div><button class="search-btn" style="border-color:rgba(255,255,255,.3);color:#fff" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel" style="background:var(--c-ink);border-color:rgba(255,255,255,.1)"><button class="search-close" style="color:rgba(255,255,255,.4)" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" style="border-color:rgba(255,255,255,.2);color:#fff;background:transparent" type="text" placeholder="Pregunta sobre el contexto legal en México..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result" style="color:rgba(255,255,255,.6)"></div></div></div><div class="lg fu">
+<div class="lc" style="border-color:rgba(255,255,255,.15)"><div class="iw" style="color:rgba(255,255,255,.35)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Art. 3° Constitucional</h3><p style="color:rgba(255,255,255,.5)">La educación debe ser <strong style="color:rgba(255,255,255,.8)">inclusiva</strong>. El sistema educativo mexicano está obligado a eliminar las barreras para el aprendizaje.</p></div>
+<div class="lc" style="border-color:rgba(255,255,255,.15)"><div class="iw" style="color:rgba(255,255,255,.35)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>USAER y CAM</h3><p style="color:rgba(255,255,255,.5)"><strong style="color:rgba(255,255,255,.8)">USAER:</strong> Apoyo dentro de escuelas regulares.<br><strong style="color:rgba(255,255,255,.8)">CAM:</strong> Centros de Atención Múltiple.</p></div>
+<div class="lc" style="border-color:rgba(255,255,255,.15)"><div class="iw" style="color:rgba(255,255,255,.35)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Nueva Escuela Mexicana</h3><p style="color:rgba(255,255,255,.5)">Reconocimiento de la diversidad como característica inherente a la humanidad.</p></div>
+</div></div></section>
 
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-pink-500 text-white">
-                            <i data-lucide="heart" class="h-6 w-6"></i>
-                        </div>
-                    </div>
-                    <div class="ml-4">
-                        <h4 class="text-lg leading-6 font-medium text-slate-900">Enfoque Humanista</h4>
-                        <p class="mt-2 text-base text-slate-500">
-                            Desde la psicología, nos enfocamos en el potencial de desarrollo y en la salud emocional, no en la etiqueta diagnóstica como limitante.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="rol" class="rs" data-context="Rol del psicólogo en necesidades psicoeducativas: evaluación psicopedagógica, acompañamiento emocional y orientación familiar."><div class="ctn"><div class="rg fu"><div class="rc search-wrap"><button class="search-btn" style="position:absolute;top:0;right:0;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)" onclick="toggleSearch(this)" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><div class="search-panel" style="background:var(--c-ink);border-color:rgba(255,255,255,.1)"><button class="search-close" style="color:rgba(255,255,255,.4)" onclick="closeSearch(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button><input class="search-input" style="border-color:rgba(255,255,255,.2);color:#fff;background:transparent" type="text" placeholder="Pregunta sobre el rol del psicólogo..." onkeydown="if(event.key==='Enter')doSearch(this)"><button class="search-go" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)" onclick="doSearch(this.previousElementSibling)">Buscar</button><div class="search-result" style="color:rgba(255,255,255,.6)"></div></div></div><h2>El Rol del Psicólogo</h2><p>Construir puentes entre las necesidades del alumno y las metodologías de enseñanza.</p><ul class="rl"><li><span class="nm">1</span><p><strong>Evaluación Psicopedagógica:</strong> Identificar fortalezas, estilos de aprendizaje y barreras.</p></li><li><span class="nm">2</span><p><strong>Acompañamiento Emocional:</strong> Trabajar autoestima, autoconcepto y habilidades sociales.</p></li><li><span class="nm">3</span><p><strong>Orientación Familiar:</strong> Herramientas para el manejo conductual y emocional.</p></li></ul></div><div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div></div></div></section>
 
-    <!-- Sección Conceptos -->
-    <section id="conceptos" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Conceptos</h2>
-            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                Conceptos Fundamentales
-            </p>
-            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
-                Entendiendo los términos clave en las Necesidades Psicoeducativas Especiales.
-            </p>
-        </div>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p style="margin-bottom:6px;color:var(--c-fg)">Administrado por:</p><p>Jesús Alejandro Ascencio Sandoval</p><p>Max Adrian Domen Sevilla</p><p>Valeria Figueroa Montes</p><p>Cristobal Sebastián Mejia España</p><p>Giovanna Vianney Martínez Enríquez</p><p>Derek Owen Villegas López</p></div><div><h4>Enlaces</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#definicion">Definición</a></li><li><a href="#conceptos">Conceptos</a></li><li><a href="#galeria">Galería</a></li><li><a href="#estrategias">Estrategias</a></li><li><a href="#mexico">Marco Legal MX</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer>
+<script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+let cs=0;const sl=document.querySelectorAll('.cs2'),tr=document.getElementById('carousel-track'),pb=document.querySelector('.cb.pv'),nb=document.querySelector('.cb.nx'),ic=document.getElementById('carousel-indicators');
+function uc(){tr.style.transform=`translateX(-${cs*100}%)`;ui()}
+function ui(){ic.innerHTML='';sl.forEach((_,i)=>{const d=document.createElement('button');d.className=`cd ${i===cs?'active':''}`;d.addEventListener('click',()=>{cs=i;uc()});ic.appendChild(d)})}
+pb.addEventListener('click',()=>{cs=cs>0?cs-1:sl.length-1;uc()});
+nb.addEventListener('click',()=>{cs=cs<sl.length-1?cs+1:0;uc()});
+setInterval(()=>{cs=cs<sl.length-1?cs+1:0;uc()},10000);uc();
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div class="bg-white p-5 md:p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">Déficit</h3>
-                <div class="card-content hidden group-hover:block">
-                    <p class="text-slate-600 leading-relaxed">
-                        Es la pérdida o anormalidad de una estructura o función psicológica, fisiológica o anatómica.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Trastorno</h3>
-                <div class="card-content hidden group-hover:block">
-                    <p class="text-slate-600 leading-relaxed">
-                        Es la alteración del desarrollo o funcionamiento en áreas cognitivas, emocionales o conductuales que interfieren con el aprendizaje o vida cotidiana.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-xl border-l-4 border-indigo-500 group cursor-pointer card" onclick="this.classList.toggle('active')">
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Discapacidad</h3>
-                <div class="card-content hidden group-hover:block">
-                    <p class="text-slate-600 leading-relaxed">
-                        Es el resultado de la interacción entre las características del individuo y las barreras del entorno, no es inherente al individuo, sino al contexto.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Galería -->
-    <section id="galeria" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Galería</h2>
-            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
-                Explora cómo es que se fue acuñando el concepto de las NPE a través del tiempo.
-            </p>
-        </div>
-
-        <div class="relative max-w-4xl mx-auto group">
-            <div class="carousel-container overflow-hidden rounded-2xl shadow-2xl bg-slate-100">
-                <div class="carousel-track flex transition-transform duration-500 ease-in-out">
-                    <img src="Images/1.jpeg" alt="Imagen 1" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/2.jpeg" alt="Imagen 2" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/3.jpeg" alt="Imagen 3" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/4.jpeg" alt="Imagen 4" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/5.jpeg" alt="Imagen 5" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/6.jpeg" alt="Imagen 6" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/7.jpeg" alt="Imagen 7" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/8.jpeg" alt="Imagen 8" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/9.jpeg" alt="Imagen 9" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/10.jpeg" alt="Imagen 10" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/11.jpeg" alt="Imagen 11" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/12.jpeg" alt="Imagen 12" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/13.jpeg" alt="Imagen 13" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/14.jpeg" alt="Imagen 14" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                    <img src="Images/15.jpeg" alt="Imagen 15" class="carousel-slide w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain flex-shrink-0">
-                </div>
-            </div>
-            
-            <button class="prev absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-indigo-600/80 hover:bg-indigo-700 text-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100" aria-label="Imagen anterior">
-                <i data-lucide="chevron-left" class="h-5 w-5 md:h-6 md:w-6"></i>
-            </button>
-            <button class="next absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-indigo-600/80 hover:bg-indigo-700 text-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100" aria-label="Imagen siguiente">
-                <i data-lucide="chevron-right" class="h-5 w-5 md:h-6 md:w-6"></i>
-            </button>
-            
-            <div class="flex justify-center mt-6 space-x-2">
-                <div class="carousel-indicators flex flex-wrap justify-center gap-2 px-4"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                <iframe 
-                    src="https://www.youtube.com/embed/W0MkjnVtwpg" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    class="w-full h-full">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Estrategias -->
-    <section id="estrategias" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Recursos</h2>
-            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                Estrategias
-            </p>
-            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
-                Recursos especializados para diferentes necesidades psicoeducativas.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <a href="altas-capacidades.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="star" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Altas Capacidades</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Estrategias y recursos para el desarrollo de altas capacidades intelectuales.
-                </p>
-            </a>
-
-            <a href="inteligencia-limitrofe.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="brain" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Inteligencia Limítrofe</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Apoyo y estrategias para el desarrollo de la inteligencia limítrofe.
-                </p>
-            </a>
-
-            <a href="dislexia.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="book-open" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Dislexia</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Recursos y estrategias para el apoyo a personas con dislexia.
-                </p>
-            </a>
-
-            <a href="deficit-visual.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="eye" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Déficit Visual</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Análisis neuropsicológico y estrategias para el aprendizaje cuando la vista está limitada.
-                </p>
-            </a>
-
-            <a href="deficit-auditivo.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="volume-2" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Déficit Auditivo</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Contenido neuropsicológico y recomendaciones para apoyar el aprendizaje con pérdida auditiva.
-                </p>
-            </a>
-
-            <a href="discapacidad-intelectual.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="shield-check" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Discapacidad Intelectual</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Estrategias concretas y apoyo práctico para estudiantes con discapacidades intelectuales.
-                </p>
-            </a>
-
-            <a href="tdah.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="zap" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">TDAH</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Explicaciones neuropsicológicas y estrategias para acompañar el TDAH con enfoque ejecutivo y motivacional.
-                </p>
-            </a>
-
-            <a href="trastorno-disruptivo.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="alert-circle" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Trastorno Disruptivo</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Comprensión neuropsicológica de la regulación emocional y estrategias de conexión efectiva.
-                </p>
-            </a>
-
-            <a href="trastorno-lenguaje.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="message-circle" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Trastorno del Lenguaje</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Comprensión de las dificultades de adquisición y expresión del lenguaje con apoyo visual y estrategias explícitas.
-                </p>
-            </a>
-
-            <a href="trastorno-espectro-autista.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="star" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Trastorno del Espectro Autista</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Información neuropsicológica y estrategias para apoyar a estudiantes con TEA.
-                </p>
-            </a>
-
-            <a href="negativista-desafiante.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="shield-alert" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Negativista Desafiante</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Comprensión del patrón de desafío y estrategias para canalizar la energía de manera constructiva.
-                </p>
-            </a>
-
-            <a href="deficit-motor.html" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow group">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto group-hover:bg-indigo-200 transition-colors">
-                    <i data-lucide="activity" class="h-8 w-8"></i>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 text-center">Déficit Motor</h3>
-                <p class="text-slate-600 leading-relaxed text-center text-sm md:text-base">
-                    Comprensión de dificultades de coordinación motora y adaptaciones prácticas para el aprendizaje.
-                </p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Sección México -->
-    <section id="mexico" class="bg-slate-100 py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center mb-12">
-                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contexto Nacional</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                    Las NPE en México
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-slate-500 lg:mx-auto">
-                    Marco institucional y la transición de la integración a la inclusión.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="p-5 md:p-6">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
-                            <i data-lucide="graduation-cap" class="h-6 w-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Art. 3° Constitucional</h3>
-                        <p class="text-slate-600 text-sm">
-                            Establece que la educación debe ser <strong>inclusiva</strong>. El sistema educativo mexicano está obligado a eliminar las barreras para el aprendizaje y la participación.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="p-5 md:p-6">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600 mb-4">
-                            <i data-lucide="map-pin" class="h-6 w-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">USAER y CAM</h3>
-                        <p class="text-slate-600 text-sm">
-                            <strong>USAER:</strong> Unidades de apoyo que asisten dentro de escuelas regulares.<br/>
-                            <strong>CAM:</strong> Centros de Atención Múltiple para formación laboral y educativa en casos que requieren ajustes significativos.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="p-5 md:p-6">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-100 text-orange-600 mb-4">
-                            <i data-lucide="book-open" class="h-6 w-6"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Nueva Escuela Mexicana</h3>
-                        <p class="text-slate-600 text-sm">
-                            El modelo actual promueve el reconocimiento de la diversidad no como un problema, sino como una característica inherente a la humanidad que enriquece el aula.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Rol del Psicólogo -->
-    <section id="rol" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-indigo-900 rounded-3xl overflow-hidden shadow-2xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2">
-                <div class="p-6 md:p-10 lg:p-16 text-white flex flex-col justify-center">
-                    <h2 class="text-2xl md:text-3xl font-extrabold mb-6">El Rol del Psicólogo</h2>
-                    <p class="text-indigo-200 text-lg mb-8">
-                        Nuestra intervención no es solo "diagnosticar", sino construir puentes entre las necesidades del alumno y las metodologías de enseñanza.
-                    </p>
-                    
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center mt-1">
-                                <span class="text-xs font-bold">1</span>
-                            </div>
-                            <p class="ml-4 text-indigo-100"><strong>Evaluación Psicopedagógica:</strong> Identificar fortalezas, estilos de aprendizaje y barreras.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center mt-1">
-                                <span class="text-xs font-bold">2</span>
-                            </div>
-                            <p class="ml-4 text-indigo-100"><strong>Acompañamiento Emocional:</strong> Trabajar la autoestima, autoconcepto y habilidades sociales del alumno.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center mt-1">
-                                <span class="text-xs font-bold">3</span>
-                            </div>
-                            <p class="ml-4 text-indigo-100"><strong>Orientación Familiar:</strong> Brindar herramientas a padres y cuidadores para el manejo conductual y emocional.</p>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="relative h-64 lg:h-auto bg-indigo-800 flex items-center justify-center overflow-hidden">
-                    <i data-lucide="brain" class="h-48 w-48 text-indigo-400 opacity-50 absolute"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center flex-wrap">
-                    <i data-lucide="brain" class="h-5 w-5 mr-2 flex-shrink-0"></i> Psicolearning
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-400">
-                    <p>Administrado por:<p>
-                    <p>Jesús Alejandro Ascencio Sandoval<p>
-                    <p>Max Adrian Domen Sevilla<p>
-                    <p>Valeria Figueroa Montes<p>
-                    <p>Cristobal Sebastián Mejia España<p>
-                    <p>Giovanna Vianney Martínez Enríquez<p>
-                    <p>Derek Owen Villegas López<p>
-                </p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                    <li><a href="#definicion" class="hover:text-white transition-colors">Definición</a></li>
-                    <li><a href="#conceptos" class="hover:text-white transition-colors">Conceptos</a></li>
-                    <li><a href="#galeria" class="hover:text-white transition-colors">Galería</a></li>
-                    <li><a href="#estrategias" class="hover:text-white transition-colors">Estrategias</a></li>
-                    <li><a href="#mexico" class="hover:text-white transition-colors">Marco Legal MX</a></li>
-                </ul>
-            </div>
-            <div>
-
-                <section id="contacto" class="py-16 md:py-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></section>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">
-                    Universidad de Guadalajara<br />
-                    Guadalajara, México<br />
-                    Licenciatura en Pscología <br />
-                    Necesidades Psicoeducativas Especiales <br />
-                    psicolearning7@gmail.com
-                </p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-            &copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.
-        </div>
-    </footer>
-
-    <!-- Scripts de funcionalidad -->
-    <script>
-        // 1. Inicializar los íconos de Lucide
-        lucide.createIcons();
-
-        // 2. Lógica para el menú de teléfonos móviles
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        const iconoMenu = document.getElementById('icono-menu');
-        const opcionesMenu = document.querySelectorAll('.opcion-menu');
-
-        let menuAbierto = false;
-
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            
-            // Mostrar u ocultar el menú
-            if (menuAbierto) {
-                menuMovil.classList.remove('hidden');
-                // Cambiar icono a "X" (para cerrar)
-                btnMenu.innerHTML = '<i data-lucide="x" id="icono-menu" class="h-6 w-6"></i>';
-            } else {
-                menuMovil.classList.add('hidden');
-                // Cambiar icono a "hamburguesa" (para abrir)
-                btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-            }
-            // Re-renderizar el ícono nuevo que acabamos de inyectar
-            lucide.createIcons();
-        });
-
-        // 3. Cerrar el menú móvil automáticamente cuando se hace clic en un enlace
-        opcionesMenu.forEach(enlace => {
-            enlace.addEventListener('click', () => {
-                menuAbierto = false;
-                menuMovil.classList.add('hidden');
-                btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-                lucide.createIcons();
-            });
-        });
-
-        // 4. Lógica del carrusel
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const track = document.querySelector('.carousel-track');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const indicatorsContainer = document.querySelector('.carousel-indicators');
-
-        function updateCarousel() {
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            updateIndicators();
-        }
-
-        function updateIndicators() {
-            indicatorsContainer.innerHTML = '';
-            slides.forEach((_, index) => {
-                const indicator = document.createElement('button');
-                indicator.className = `w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-indigo-600' : 'bg-slate-300'}`;
-                indicator.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
-                indicatorsContainer.appendChild(indicator);
-            });
-        }
-
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', () => {
-                currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
-                updateCarousel();
-            });
-
-            nextBtn.addEventListener('click', () => {
-                currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
-                updateCarousel();
-            });
-        }
-
-        // Auto play
-        setInterval(() => {
-            currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
-            updateCarousel();
-        }, 10000); // Change every 10 seconds
-
-        // Initialize
-        updateCarousel();
-    </script>
+// Search functionality
+function toggleSearch(btn){const panel=btn.nextElementSibling;const wasOpen=panel.classList.contains('open');document.querySelectorAll('.search-panel').forEach(p=>p.classList.remove('open'));if(!wasOpen)panel.classList.add('open')}
+function closeSearch(btn){btn.closest('.search-panel').classList.remove('open')}
+function renderMd(t){let h=t.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>');h=h.replace(/`([^`]+)`/g,'<code>$1</code>');h=h.replace(/^- (.+)$/gm,'<li>$1</li>');h=h.replace(/(<li>[\s\S]*?<\/li>)/g,m=>{if(!m.startsWith('<ul>'))return'<ul>'+m+'</ul>';return m});h=h.replace(/<br>\s*<ul>/g,'<ul>').replace(/<\/ul>\s*<br>/g,'</ul>').replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');if(!h.startsWith('<'))h='<p>'+h+'</p>';return h}
+function doSearch(input){const panel=input.closest('.search-panel');const result=panel.querySelector('.search-result');const section=input.closest('section')||input.closest('.rs');const context=section?.dataset?.context||'';const query=input.value.trim();if(!query)return;result.innerHTML='<div class="loading">Buscando...</div>';const go=panel.querySelector('.search-go');go.disabled=true;fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,context})}).then(r=>r.json()).then(d=>{result.innerHTML=renderMd(d.answer||d.error||'Sin respuesta');go.disabled=false}).catch(()=>{result.innerHTML='Error de conexión. Verifica que el servidor esté activo.';go.disabled=false})}
+document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap')){document.querySelectorAll('.search-panel').forEach(p=>p.classList.remove('open'))}});
+</script>
 </body>
 </html>

@@ -1,220 +1,57 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negativista Desafiante - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #b91c1c 0%, #dc2626 45%, #ef4444 100%); }
-        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
-        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
-        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negativista Desafiante - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="shield-alert" class="h-8 w-8 text-red-600"></i>
-                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-red-600 transition">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#introduccion" class="text-slate-600 hover:text-red-600">Introducción</a>
-                    <a href="#signos" class="text-slate-600 hover:text-red-600">Signos</a>
-                    <a href="#barreras" class="text-slate-600 hover:text-red-600">Barreras</a>
-                    <a href="#estrategias" class="text-slate-600 hover:text-red-600">Estrategias</a>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition" onclick="window.location='index.html';">Volver</button>
-                </div>
-                <div class="md:hidden">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#introduccion" class="block text-slate-600 hover:text-red-600">Introducción</a>
-                <a href="#signos" class="block text-slate-600 hover:text-red-600">Signos</a>
-                <a href="#barreras" class="block text-slate-600 hover:text-red-600">Barreras</a>
-                <a href="#estrategias" class="block text-slate-600 hover:text-red-600">Estrategias</a>
-                <button class="w-full text-left text-red-600 font-semibold" onclick="window.location='index.html';">Volver al inicio</button>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-panel text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-12 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill bg-white/15 border border-white/20 text-white">Trastorno Negativista Desafiante</span>
-                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Cuando ceder se siente como perder</h1>
-                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
-                        Es un patrón continuo de humor irritable y actitud desafiante hacia las figuras de autoridad. Su cerebro es rígido: para ellos, aceptar una regla es perder, y harán lo que sea para no perder.
-                    </p>
-                </div>
-                <div class="grid gap-6">
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Cerebro rígido</h2>
-                        <p class="text-slate-600">Les cuesta cambiar de marcha o adaptarse a la agenda de otra persona.</p>
-                    </div>
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Conexión inmadura</h2>
-                        <p class="text-slate-600">La vía entre el lóbulo frontal (razón) y el centro emocional (defensa) es inmadura.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
-        <section id="introduccion" class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-start">
-            <article class="bg-white p-6 md:p-10 rounded-[32px] detail-card border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Es un patrón continuo de humor irritable, actitud desafiante y, a veces, comportamiento vengativo hacia las figuras de autoridad (padres, maestros, entrenadores).</p>
-                <p class="text-slate-600 leading-relaxed mb-4">Neuropsicológicamente, la conexión entre la parte frontal del cerebro (que dice: "cálmate y piensa en las consecuencias") y el centro emocional (que grita: "¡defiéndete!") es inmadura.</p>
-                <p class="text-slate-600 leading-relaxed">Su cerebro es rígido: les cuesta muchísimo cambiar de marcha o adaptarse a la agenda de otra persona. Para ellos, ceder se siente como perder, y su cerebro hará lo que sea para no perder.</p>
-            </article>
-            <div class="space-y-6">
-                <div class="bg-red-600 text-white p-8 rounded-[32px] shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-3">La lógica de la batalla</h3>
-                    <p class="leading-relaxed">Para su cerebro, cada interacción es un juego de ganar o perder. Ceder es inaceptable.</p>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">No es mala conducta deliberada</h3>
-                    <p class="text-slate-600 leading-relaxed">Es una dificultad neurológica en la flexibilidad cognitiva y emocional.</p>
-                </div>
-            </div>
-        </section>
-        <section id="signos">
-            <div class="bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white rounded-[32px] p-10 shadow-2xl">
-                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                    <div>
-                        <p class="text-sm uppercase tracking-[0.32em] text-red-100 font-semibold">Signos y Síntomas</p>
-                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Un comportamiento constante y desgastante</h2>
-                    </div>
-                    <div class="rounded-3xl bg-white/10 px-5 py-4 max-w-md text-slate-100">
-                        <p>No es un mal día ocasional. Es un patrón persistente que desgasta profundamente a su entorno.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Discutir por deporte</h3>
-                    <p class="text-slate-600 leading-relaxed">Si le dices que el cielo es azul, te dirá que es celeste solo para no darte la razón. Cuestionan todas las reglas.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">La "mecha corta"</h3>
-                    <p class="text-slate-600 leading-relaxed">Pierden los estribos con facilidad. Se irritan por cosas mínimas que a otros niños no molestarían.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Resistencia activa</h3>
-                    <p class="text-slate-600 leading-relaxed">No es olvido: te miran a los ojos y deciden activamente no hacer lo que les pediste.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Cero autocrítica</h3>
-                    <p class="text-slate-600 leading-relaxed">Si reprueban o fracasan, siempre hay un culpable externo. Nunca asumen responsabilidad.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Rencores duraderos</h3>
-                    <p class="text-slate-600 leading-relaxed">Si sienten injusticia, guardan enojo por días y buscan el momento para vengarse.</p>
-                </div>
-            </div>
-        </section>
-        <section id="barreras" class="space-y-10">
-            <div class="text-center">
-                <p class="text-red-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
-                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">Muros de concreto en el salón de clases</h2>
-            </div>
-            <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Pérdida de tiempo instruccional</h3>
-                    <p class="text-slate-600 leading-relaxed">Pasan tanto tiempo discutiendo por qué hacer la tarea que cuando se rinden, la clase ya terminó y no aprendieron.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">El estigma escolar</h3>
-                    <p class="text-slate-600 leading-relaxed">Se ganan rápidamente la etiqueta del "niño problema". Los maestros los tratan con más dureza desde el inicio.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Rechazo de los compañeros</h3>
-                    <p class="text-slate-600 leading-relaxed">A los niños no les gusta jugar con alguien que impone reglas, se enoja si pierde o interrumpe para pelear.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Falta de petición de ayuda</h3>
-                    <p class="text-slate-600 leading-relaxed">Al no querer mostrarse vulnerables, si no entienden algo, prefieren romper la hoja antes que levantar la mano.</p>
-                </div>
-            </div>
-        </section>
-        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
-            <div class="bg-slate-900 text-white rounded-[32px] p-10 shadow-2xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="inline-flex rounded-full bg-red-500 px-4 py-2 text-sm font-semibold">En Casa</span>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">Colaboración en lugar de imposición</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Usa resolución conjunta de problemas. En lugar de "Vas a hacer la tarea ahora", intenta: "¿Cómo lo podemos resolver juntos?"</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">La ilusión de control</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Nunca des órdenes abiertas. Da dos opciones aceptables para ti: "¿Te bañas antes o después de cenar?". Ellos sienten que deciden.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Elogios específicos y objetivos</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Como tienen un escudo alto, los elogios exagerados parecen manipulación. Sé objetivo: "Gracias por recoger tus zapatos, me ayuda mucho".</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
-                <div class="mb-8">
-                    <span class="inline-flex rounded-full bg-red-100 px-4 py-2 text-red-800 text-sm font-semibold">En la Escuela</span>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Reglas impersonales</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">La regla tiene que ser el "policía", no el maestro. Señala un cartel: "La regla de la escuela dice que comemos en recreo". Desvía el conflicto personal.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Ignorar lo secundario, atender lo principal</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Si hace el examen pero murmura o pone ojos en blanco, ignora los gestos. Está cumpliendo lo importante. Si te enganches, pierdes la guerra.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Roles de liderazgo constructivo</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Canaliza su necesidad de poder. "Necesito a alguien con energía para organizar este equipo". Darles responsabilidad desactiva su rebeldía.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="shield-alert" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">Estrategias para comprender y acompañar a niños con trastorno negativista desafiante con empatía y estructura.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        lucide.createIcons();
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        let menuAbierto = false;
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            menuMovil.classList.toggle('hidden', !menuAbierto);
-        });
-    </script>
-</body>
-</html>
+<body><nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#intro">Introducción</a></li><li><a href="#signos">Signos</a></li><li><a href="#barreras">Barreras</a></li><li><a href="#estrategias">Estrategias</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#intro" class="opm">Introducción</a><a href="#signos" class="opm">Signos</a><a href="#barreras" class="opm">Barreras</a><a href="#estrategias" class="opm">Estrategias</a><a href="index.html" class="opm">Volver al Inicio</a></div><section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><span class="pg-pill">Negativista Desafiante</span><h1 class="hero-hl">Cuando ceder se siente como perder</h1><p class="hero-sb">Es un patrón continuo de humor irritable y actitud desafiante hacia las figuras de autoridad. Su cerebro es rígido: para ellos, aceptar una regla es perder, y harán lo que sea para no perder.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);max-width:600px;margin:var(--sp-48) auto 0;text-align:left"><div class="pg-card"><h2>Cerebro rígido</h2><p>Les cuesta cambiar de marcha o adaptarse a la agenda de otra persona.</p></div><div class="pg-card"><h2>Conexión inmadura</h2><p>La vía entre el lóbulo frontal (razón) y el centro emocional (defensa) es inmadura.</p></div></div></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
+<section id="intro" class="cs"><div class="ctn"><div class="content-grid fu">
+<div class="content-card"><h2>Introducción: ¿Qué es?</h2><p>Es un patrón continuo de humor irritable, actitud desafiante y, a veces, comportamiento vengativo hacia las figuras de autoridad (padres, maestros, entrenadores).</p><p style="margin-top:var(--sp-12)">Neuropsicológicamente, la conexión entre la parte frontal del cerebro (que dice: "cálmate y piensa en las consecuencias") y el centro emocional (que grita: "¡defiéndete!") es inmadura.</p><p style="margin-top:var(--sp-12)">Su cerebro es rígido: les cuesta muchísimo cambiar de marcha o adaptarse a la agenda de otra persona. Para ellos, ceder se siente como perder, y su cerebro hará lo que sea para no perder.</p></div>
+<div style="display:flex;flex-direction:column;gap:var(--sg)"><div class="info-block" style="background:var(--c-obs);color:#fff;border:none"><h3 style="color:#fff">La lógica de la batalla</h3><p style="color:rgba(255,255,255,.65)">Para su cerebro, cada interacción es un juego de ganar o perder. Ceder es inaceptable.</p></div>
+<div class="info-block"><h3>No es mala conducta deliberada</h3><p>Es una dificultad neurológica en la flexibilidad cognitiva y emocional.</p></div></div>
+</div></div></section>
+<section id="signos" class="cs"><div class="ctn"><div class="fu"><p class="sl">Signos y Síntomas</p><h2 class="sh sh-xs">Un comportamiento constante y desgastante</h2></div>
+<div class="signs-grid fu">
+<div class="sign-card"><h3>Discutir por deporte</h3><p>Si le dices que el cielo es azul, te dirá que es celeste solo para no darte la razón. Cuestionan todas las reglas.</p></div>
+<div class="sign-card"><h3>La "mecha corta"</h3><p>Pierden los estribos con facilidad. Se irritan por cosas mínimas que a otros niños no molestarían.</p></div>
+<div class="sign-card"><h3>Resistencia activa</h3><p>No es olvido: te miran a los ojos y deciden activamente no hacer lo que les pediste.</p></div>
+<div class="sign-card"><h3>Cero autocrítica</h3><p>Si reprueban o fracasan, siempre hay un culpable externo. Nunca asumen responsabilidad.</p></div>
+<div class="sign-card"><h3>Rencores duraderos</h3><p>Si sienten injusticia, guardan enojo por días y buscan el momento para vengarse.</p></div>
+</div></div></section>
+<section id="barreras" class="cs"><div class="ctn"><div class="fu"><p class="sl">Barreras Académicas</p><h2 class="sh sh-xs">Muros de concreto en el salón de clases</h2></div>
+<div class="barriers-grid fu">
+<div class="barrier-card"><h3>Pérdida de tiempo instruccional</h3><p>Pasan tanto tiempo discutiendo por qué hacer la tarea que cuando se rinden, la clase ya terminó y no aprendieron.</p></div>
+<div class="barrier-card"><h3>El estigma escolar</h3><p>Se ganan rápidamente la etiqueta del "niño problema". Los maestros los tratan con más dureza desde el inicio.</p></div>
+<div class="barrier-card"><h3>Rechazo de los compañeros</h3><p>A los niños no les gusta jugar con alguien que impone reglas, se enoja si pierde o interrumpe para pelear.</p></div>
+<div class="barrier-card"><h3>Falta de petición de ayuda</h3><p>Al no querer mostrarse vulnerables, si no entienden algo, prefieren romper la hoja antes que levantar la mano.</p></div>
+</div></div></section>
+<section id="estrategias" class="cs"><div class="ctn"><div class="fu"><p class="sl">Estrategias</p><h2 class="sh sh-xs">Cómo apoyar en casa y en la escuela</h2></div>
+<div class="strategy-pair fu">
+<div class="strategy-dark"><span class="tag">En Casa</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>Colaboración en lugar de imposición</h3><p>Usa resolución conjunta de problemas. En lugar de "Vas a hacer la tarea ahora", intenta: "¿Cómo lo podemos resolver juntos?"</p></div>
+<div><h3>La ilusión de control</h3><p>Nunca des órdenes abiertas. Da dos opciones aceptables para ti: "¿Te bañas antes o después de cenar?". Ellos sienten que deciden.</p></div>
+<div><h3>Elogios específicos y objetivos</h3><p>Como tienen un escudo alto, los elogios exagerados parecen manipulación. Sé objetivo: "Gracias por recoger tus zapatos, me ayuda mucho".</p></div>
+</div></div>
+<div class="strategy-light"><span class="tag" style="background:var(--c-obs);color:#fff">En la Escuela</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>Reglas impersonales</h3><p>La regla tiene que ser el "policía", no el maestro. Señala un cartel: "La regla de la escuela dice que comemos en recreo". Desvía el conflicto personal.</p></div>
+<div><h3>Ignorar lo secundario, atender lo principal</h3><p>Si hace el examen pero murmura o pone ojos en blanco, ignora los gestos. Está cumpliendo lo importante. Si te enganches, pierdes la guerra.</p></div>
+<div><h3>Roles de liderazgo constructivo</h3><p>Canaliza su necesidad de poder. "Necesito a alguien con energía para organizar este equipo". Darles responsabilidad desactiva su rebeldía.</p></div>
+</div></div>
+</div></div></section>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Estrategias para comprender y acompañar a niños con trastorno negativista desafiante con empatía y estructura.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li><li><a href="index.html#mexico">Contexto México</a></li><li><a href="index.html#rol">Rol del Psicólogo</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer><script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+</script></body></html>

@@ -1,231 +1,65 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Déficit Visual - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #e7e11e 100%, #4338ca 0%); }
-        .feature-card { background: rgba(255,255,255,.96); border: 1px solid rgba(148,163,184,.24); }
-        .detail-card { border-radius: 28px; box-shadow: 0 24px 60px rgba(15,23,42,.08); }
-        .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border-radius: 9999px; font-weight: 700; }
-        .pill--visual { background: rgba(59, 130, 246, .12); color: #4338ca; }
-        .pill--cognitive { background: rgba(14, 165, 233, .12); color: #0369a1; }
-        .section-label { border-left: 4px solid #2563eb; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déficit Visual - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
-                    <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
-                    <a href="index.html#inicio" class="ml-2 text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-                    <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
-                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psicólogo</a>
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors" onclick="window.location='index.html';">Volver</button>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden md:hidden bg-white border-b border-slate-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Recursos</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psic�logo</a>
-            </div>
-        </div>
-    </nav>
-    <section class="hero-panel text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill pill--visual">Déficit Visual</span>
-                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Cuando la vista limita, el cerebro redibuja la experiencia</h1>
-                    <p class="mt-5 text-lg leading-8 text-slate-100 max-w-2xl">No es solo "ver mal"; es cómo el sistema nervioso organiza la percepción espacial y usa otros canales sensoriales para comprender el entorno.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="feature-card detail-card p-6 rounded-3xl">
-                        <h2 class="text-xl font-semibold text-slate-900">Neuropsicología visual</h2>
-                        <p class="mt-3 text-slate-600">El problema primario puede estar en los ojos, pero la verdadera adaptación ocurre en el cerebro.</p>
-                    </div>
-                    <div class="feature-card detail-card p-6 rounded-3xl">
-                        <h2 class="text-xl font-semibold text-slate-900">Cerebro en modo compensatorio</h2>
-                        <p class="mt-3 text-slate-600">Aprende a leer gestos, palabras habladas y señales táctiles como información sinestésica.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-start">
-            <div class="bg-white detail-card p-6 md:p-10 rounded-3xl border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">¿Qué es el Déficit Visual?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Desde la neuropsicología, se entiende como una alteración en la entrada de estímulos sensoriales que afecta la percepción espacial. No es solo una cuestión de lentes; es que el cerebro recibe información incompleta o distorsionada del entorno.</p>
-                <blockquote class="mt-6 border-l-4 border-sky-500 pl-5 text-slate-700 italic">Imagina armar un rompecabezas de 1,000 piezas y faltarte 800. El cerebro hace un esfuerzo extra para llenar los vacíos con otros sentidos.</blockquote>
-            </div>
-            <div class="space-y-6">
-                <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">¿Por qué importa?</h3>
-                    <p class="text-slate-600">Porque la visión es la puerta de entrada principal en el aula. Si se estrecha, la organización espacial y la atención derivan en mayor cansancio y errores.</p>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="bg-slate-50 p-6 md:p-6 rounded-3xl border border-slate-200">
-                        <span class="text-sm font-semibold uppercase tracking-wide text-sky-600">Percepción espacial</span>
-                        <p class="mt-3 text-slate-600">Dificultad para ubicar objetos y juzgar distancias.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <span class="text-sm font-semibold uppercase tracking-wide text-sky-600">Carga cognitiva</span>
-                        <p class="mt-3 text-slate-600">El cerebro invierte más recursos en interpretar estímulos visuales incompletos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <p class="text-indigo-600 font-semibold uppercase tracking-wide">Signos y Síntomas</p>
-                <h2 class="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">Señales que podemos observar</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Posturas extrañas</h3>
-                    <p class="text-slate-600">Inclina la cabeza, se acerca mucho al papel o cubre un ojo para intentar ver mejor.</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Fatiga visual rápida</h3>
-                    <p class="text-slate-600">Se cansa con facilidad, frota los ojos o se muestra irritable después de actividades visuales.</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Torpeza motora</h3>
-                    <p class="text-slate-600">Le cuesta calcular distancias y puede tropezar o chocar con objetos.</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Dificultad para seguir</h3>
-                    <p class="text-slate-600">Pierde el renglón al leer o no puede seguir el movimiento de una pelota.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <p class="text-indigo-600 font-semibold uppercase tracking-wide">Barreras Académicas</p>
-            <h2 class="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">Retos que enfrentan en el aula</h2>
-        </div>
-        <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
-            <div class="bg-white p-6 md:p-8 rounded-3xl detail-card border border-slate-200">
-                <h3 class="text-xl font-semibold text-slate-900 mb-3">Copia del pizarrón</h3>
-                <p class="text-slate-600">Cambiar de visión de lejos a cerca repetidamente puede generar mareo y pérdida del hilo de la clase.</p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                <h3 class="text-xl font-semibold text-slate-900 mb-3">Comprensión visual</h3>
-                <p class="text-slate-600">Conceptos que se enseñan con imágenes o mapas pueden quedar fuera de su comprensión real.</p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl detail-card border border-slate-200">
-                <h3 class="text-xl font-semibold text-slate-900 mb-3">Aislamiento social</h3>
-                <p class="text-slate-600">No ver gestos o señales faciales puede hacer que parezca distraído o desconectado.</p>
-            </div>
-        </div>
-    </section>
-    <section class="py-16 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-10 lg:grid-cols-2">
-                <div class="bg-white p-10 rounded-3xl detail-card border border-slate-200">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Estrategias en casa</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Orden inamovible</h3>
-                            <p class="text-slate-600">Mantén objetos clave siempre en el mismo lugar para reducir la ansiedad y mejorar la autonomía.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Iluminación adecuada</h3>
-                            <p class="text-slate-600">Usa luz blanca dirigida a la zona de estudio y evita sombras provocadas por su propia mano.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Narración de la vida</h3>
-                            <p class="text-slate-600">Describe lo que haces para convertir el entorno en información accesible: "Voy a dejar las llaves sobre la mesa".</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-10 rounded-3xl detail-card border border-slate-200">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Estrategias en la escuela</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Ubicación estratégica</h3>
-                            <p class="text-slate-600">Colócalo donde mejor le favorezca la luz y se eviten reflejos del pizarrón.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Contraste máximo</h3>
-                            <p class="text-slate-600">Usa plumones negros sobre pizarrones blancos y evita colores claros que se pierden a distancia.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Material táctil y auditivo</h3>
-                            <p class="text-slate-600">Permite tocar figuras geométricas y usar audiolibros o grabar la clase para repasarla.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Tiempo extra</h3>
-                            <p class="text-slate-600">Dale minutos adicionales en exámenes o reduce la carga de ejercicios repetitivos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">Información centrada en la inclusión y las estrategias psicoeducativas para estudiantes con necesidades especiales.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white transition-colors">Estrategias</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white transition-colors">Contexto México</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white transition-colors">Rol del Psicólogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br />Guadalajara, México<br />Licenciatura en Psicología<br />Necesidades Psicoeducativas Especiales<br />psicolearning7@gmail.com</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div>
-    </footer>
-    <script>
-        lucide.createIcons();
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        const opcionesMenu = document.querySelectorAll('.opcion-menu');
-        let menuAbierto = false;
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            if (menuAbierto) {
-                menuMovil.classList.remove('hidden');
-                btnMenu.innerHTML = '<i data-lucide="x" id="icono-menu" class="h-6 w-6"></i>';
-            } else {
-                menuMovil.classList.add('hidden');
-                btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-            }
-            lucide.createIcons();
-        });
-        opcionesMenu.forEach(enlace => {
-            enlace.addEventListener('click', () => {
-                menuAbierto = false;
-                menuMovil.classList.add('hidden');
-                btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-                lucide.createIcons();
-            });
-        });
-    </script>
+<body>
+<nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#definicion">Definición</a></li><li><a href="#signos">Signos</a></li><li><a href="#barreras">Barreras</a></li><li><a href="#estrategias">Estrategias</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#definicion" class="opm">Definición</a><a href="#signos" class="opm">Signos</a><a href="#barreras" class="opm">Barreras</a><a href="#estrategias" class="opm">Estrategias</a><a href="index.html" class="opm">Volver al Inicio</a></div>
+<section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div>
+<div class="hero-ct"><span class="pg-pill">Déficit Visual</span><h1 class="hero-hl">Cuando la vista limita, el cerebro redibuja la experiencia</h1><p class="hero-sb">No es solo "ver mal"; es cómo el sistema nervioso organiza la percepción espacial y usa otros canales sensoriales para comprender el entorno.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);max-width:600px;margin:var(--sp-48) auto 0;text-align:left"><div class="pg-card"><h2>Neuropsicología visual</h2><p>El problema primario puede estar en los ojos, pero la verdadera adaptación ocurre en el cerebro.</p></div><div class="pg-card"><h2>Cerebro en modo compensatorio</h2><p>Aprende a leer gestos, palabras habladas y señales táctiles como información sinestésica.</p></div></div>
+</div>
+<div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div>
+</section>
+<section class="cs"><div class="ctn"><div class="content-grid fu">
+<div class="content-card"><h2>¿Qué es el Déficit Visual?</h2><p>Desde la neuropsicología, se entiende como una alteración en la entrada de estímulos sensoriales que afecta la percepción espacial. No es solo una cuestión de lentes; es que el cerebro recibe información incompleta o distorsionada del entorno.</p><blockquote style="margin-top:var(--sp-28);border-left:3px solid var(--c-obs);padding-left:var(--sp-28);color:var(--c-ink);font-style:italic">Imagina armar un rompecabezas de 1,000 piezas y faltarte 800. El cerebro hace un esfuerzo extra para llenar los vacíos con otros sentidos.</blockquote></div>
+<div style="display:flex;flex-direction:column;gap:var(--sg)"><div class="info-block"><h3>¿Por qué importa?</h3><p>Porque la visión es la puerta de entrada principal en el aula. Si se estrecha, la organización espacial y la atención derivan en mayor cansancio y errores.</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--eg)"><div class="info-block"><span class="sl" style="display:block;margin-bottom:var(--sp-8)">Percepción espacial</span><p>Dificultad para ubicar objetos y juzgar distancias.</p></div><div class="info-block"><span class="sl" style="display:block;margin-bottom:var(--sp-8)">Carga cognitiva</span><p>El cerebro invierte más recursos en interpretar estímulos visuales incompletos.</p></div></div></div>
+</div></div></section>
+<section class="cs cs-g"><div class="ctn"><div class="fu"><p class="sl">Signos y Síntomas</p><h2 class="sh sh-xs">Señales que podemos observar</h2></div>
+<div class="signs-grid fu">
+<div class="sign-card"><h3>Posturas extrañas</h3><p>Inclina la cabeza, se acerca mucho al papel o cubre un ojo para intentar ver mejor.</p></div>
+<div class="sign-card"><h3>Fatiga visual rápida</h3><p>Se cansa con facilidad, frota los ojos o se muestra irritable después de actividades visuales.</p></div>
+<div class="sign-card"><h3>Torpeza motora</h3><p>Le cuesta calcular distancias y puede tropezar o chocar con objetos.</p></div>
+<div class="sign-card"><h3>Dificultad para seguir</h3><p>Pierde el renglón al leer o no puede seguir el movimiento de una pelota.</p></div>
+</div></div></section>
+<section class="cs"><div class="ctn"><div class="fu"><p class="sl">Barreras Académicas</p><h2 class="sh sh-xs">Retos que enfrentan en el aula</h2></div>
+<div class="barriers-grid fu">
+<div class="barrier-card"><h3>Copia del pizarrón</h3><p>Cambiar de visión de lejos a cerca repetidamente puede generar mareo y pérdida del hilo de la clase.</p></div>
+<div class="barrier-card"><h3>Comprensión visual</h3><p>Conceptos que se enseñan con imágenes o mapas pueden quedar fuera de su comprensión real.</p></div>
+<div class="barrier-card"><h3>Aislamiento social</h3><p>No ver gestos o señales faciales puede hacer que parezca distraído o desconectado.</p></div>
+</div></div></section>
+<section class="cs cs-g"><div class="ctn"><div class="fu"><p class="sl">Estrategias</p><h2 class="sh sh-xs">Cómo apoyar en casa y en la escuela</h2></div>
+<div class="strategy-pair fu">
+<div class="strategy-dark"><span class="tag">En Casa</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>Orden inamovible</h3><p>Mantén objetos clave siempre en el mismo lugar para reducir la ansiedad y mejorar la autonomía.</p></div>
+<div><h3>Iluminación adecuada</h3><p>Usa luz blanca dirigida a la zona de estudio y evita sombras provocadas por su propia mano.</p></div>
+<div><h3>Narración de la vida</h3><p>Describe lo que haces para convertir el entorno en información accesible: "Voy a dejar las llaves sobre la mesa".</p></div>
+</div></div>
+<div class="strategy-light"><span class="tag" style="background:var(--c-obs);color:#fff">En la Escuela</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>Ubicación estratégica</h3><p>Colócalo donde mejor le favorezca la luz y se eviten reflejos del pizarrón.</p></div>
+<div><h3>Contraste máximo</h3><p>Usa plumones negros sobre pizarrones blancos y evita colores claros que se pierden a distancia.</p></div>
+<div><h3>Material táctil y auditivo</h3><p>Permite tocar figuras geométricas y usar audiolibros o grabar la clase para repasarla.</p></div>
+<div><h3>Tiempo extra</h3><p>Dale minutos adicionales en exámenes o reduce la carga de ejercicios repetitivos.</p></div>
+</div></div>
+</div></div></section>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Información centrada en la inclusión y las estrategias psicoeducativas para estudiantes con necesidades especiales.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li><li><a href="index.html#mexico">Contexto México</a></li><li><a href="index.html#rol">Rol del Psicólogo</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer>
+<script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>

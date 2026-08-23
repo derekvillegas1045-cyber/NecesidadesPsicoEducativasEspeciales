@@ -1,240 +1,63 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trastorno del Lenguaje - Psicolearning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-panel { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 45%, #06b6d4 100%); }
-        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
-        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
-        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trastorno del Lenguaje - Psicolearning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="message-circle" class="h-8 w-8 text-purple-600"></i>
-                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-purple-600 transition">Psicolearning</a>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#introduccion" class="text-slate-600 hover:text-purple-600">Introducción</a>
-                    <a href="#signos" class="text-slate-600 hover:text-purple-600">Signos</a>
-                    <a href="#barreras" class="text-slate-600 hover:text-purple-600">Barreras</a>
-                    <a href="#estrategias" class="text-slate-600 hover:text-purple-600">Estrategias</a>
-                    <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition" onclick="window.location='index.html';">Volver</button>
-                </div>
-                <div class="md:hidden">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#introduccion" class="block text-slate-600 hover:text-purple-600">Introducción</a>
-                <a href="#signos" class="block text-slate-600 hover:text-purple-600">Signos</a>
-                <a href="#barreras" class="block text-slate-600 hover:text-purple-600">Barreras</a>
-                <a href="#estrategias" class="block text-slate-600 hover:text-purple-600">Estrategias</a>
-                <button class="w-full text-left text-purple-600 font-semibold" onclick="window.location='index.html';">Volver al inicio</button>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-panel text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 md:gap-12 grid-cols-1 lg:grid-cols-2 items-center">
-                <div>
-                    <span class="pill bg-white/15 border border-white/20 text-white">Trastorno del Lenguaje</span>
-                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Las reglas invisibles del lenguaje</h1>
-                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
-                        Es una dificultad neurobiológica que afecta la adquisición, comprensión y expresión del lenguaje. Su cerebro necesita que le enseñen explícitamente lo que otros niños absorben como una esponja.
-                    </p>
-                </div>
-                <div class="grid gap-6">
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Reglas invisibles</h2>
-                        <p class="text-slate-600">Las estructuras, tiempos verbales y conexiones lógicas del lenguaje no se absorben naturalmente.</p>
-                    </div>
-                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
-                        <h2 class="text-2xl font-bold mb-3">Enseñanza explícita</h2>
-                        <p class="text-slate-600">Necesitan instrucción clara, repetición y apoyos visuales para construir competencia lingüística.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
-        <section id="introduccion" class="grid gap-6 md:gap-10 grid-cols-1 lg:grid-cols-2 items-start">
-            <article class="bg-white p-6 md:p-10 rounded-[32px] detail-card border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">Es una dificultad neurobiológica que afecta la adquisición, comprensión y expresión del lenguaje hablado o escrito.</p>
-                <p class="text-slate-600 leading-relaxed mb-4">El lenguaje tiene reglas invisibles (cómo ordenar las palabras, qué significa una broma, cómo usar el pasado o el futuro). El cerebro de la mayoría de los niños absorbe estas reglas del entorno como una esponja, casi sin esfuerzo.</p>
-                <p class="text-slate-600 leading-relaxed">En cambio, el cerebro de un niño con Trastorno del Lenguaje necesita que le enseñen esas reglas de forma explícita, repetitiva y con mucho apoyo visual. No se trata solo de "pronunciar mal", sino de tener problemas para armar la estructura completa de una frase o entender el mensaje.</p>
-            </article>
-            <div class="space-y-6">
-                <div class="bg-purple-600 text-white p-8 rounded-[32px] shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-3">Como una esponja rota</h3>
-                    <p class="leading-relaxed">Otros niños absorben el lenguaje naturalmente. Los niños con esta dificultad necesitan que le lo enseñen paso a paso.</p>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">No es solo pronunciación</h3>
-                    <p class="text-slate-600 leading-relaxed">Van más allá de los sonidos: es la estructura, los tiempos y la lógica del mensaje.</p>
-                </div>
-            </div>
-        </section>
-        <section id="signos">
-            <div class="bg-gradient-to-r from-purple-500 via-fuchsia-500 to-cyan-500 text-white rounded-[32px] p-10 shadow-2xl">
-                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                    <div>
-                        <p class="text-sm uppercase tracking-[0.32em] text-purple-100 font-semibold">Signos y Síntomas</p>
-                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Dificultades en la comunicación diaria</h2>
-                    </div>
-                    <div class="rounded-3xl bg-white/10 px-5 py-4 max-w-md text-slate-100">
-                        <p>Las señales varían dependiendo de si es dificultad receptiva (entender) o expresiva (hablar).</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Vocabulario pobre</h3>
-                    <p class="text-slate-600 leading-relaxed">Usa palabras generales como "eso" o "cosa" porque no encuentra la etiqueta exacta del objeto.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Habla telegráfica</h3>
-                    <p class="text-slate-600 leading-relaxed">Se come los conectores. Dice "Quiero parque perro" en lugar de "Quiero ir al parque con mi perro".</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Tiempos verbales confusos</h3>
-                    <p class="text-slate-600 leading-relaxed">Confunden ayer con mañana. Dicen "Yo sabo" o "Yo rompo" a edades donde su grupo ya conjuga bien.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Frustración al contar</h3>
-                    <p class="text-slate-600 leading-relaxed">Tienen la idea en la cabeza pero se enredan, dan saltos de tema y no se les entiende la historia.</p>
-                </div>
-                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Respuestas fuera de lugar</h3>
-                    <p class="text-slate-600 leading-relaxed">Escucha palabras pero no decodifica completamente. Por eso sus respuestas parecen desconectadas.</p>
-                </div>
-            </div>
-        </section>
-        <section id="barreras" class="space-y-10">
-            <div class="text-center">
-                <p class="text-purple-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
-                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">La escuela está construida 100% sobre el lenguaje</h2>
-            </div>
-            <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Lectoescritura</h3>
-                    <p class="text-slate-600 leading-relaxed">La lectura es lenguaje pintado. Si no domina el hablado, la lectoescritura será una montaña empinada.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Problemas razonados</h3>
-                    <p class="text-slate-600 leading-relaxed">En matemáticas, pueden sumar perfecto, pero el enunciado "Juanita tenía 5 manzanas..." los confunde y no saben qué operación hacer.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Instrucciones complejas</h3>
-                    <p class="text-slate-600 leading-relaxed">Si la maestra dice varios pasos, se pierden a la mitad de la frase.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Aislamiento en el juego</h3>
-                    <p class="text-slate-600 leading-relaxed">En el recreo, los niños hablan muy rápido e inventan reglas al momento. No procesa lo suficientemente rápido y es hecho a un lado.</p>
-                </div>
-            </div>
-        </section>
-        <section class="text-center mb-12 space-y-4">
-            <button onclick="window.location='trastorno-habla.html';" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-[28px] font-bold shadow-lg transition-all">
-                <i data-lucide="arrow-right" class="h-5 w-5"></i>
-                Conoce también: Trastorno del Habla
-            </button>
-            <br>
-            <button onclick="window.location='trastorno-fluidez.html';" class="inline-flex items-center gap-3 bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white px-8 py-4 rounded-[28px] font-bold shadow-lg transition-all">
-                <i data-lucide="arrow-right" class="h-5 w-5"></i>
-                Conoce también: Trastorno de la Fluidez
-            </button>
-            <br>
-            <button onclick="window.location='trastorno-comunicacion.html';" class="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white px-8 py-4 rounded-[28px] font-bold shadow-lg transition-all">
-                <i data-lucide="arrow-right" class="h-5 w-5"></i>
-                Conoce también: Trastorno de la Comunicación
-            </button>
-        </section>
-        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
-            <div class="bg-slate-900 text-white rounded-[32px] p-10 shadow-2xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="inline-flex rounded-full bg-purple-500 px-4 py-2 text-sm font-semibold">En Casa</span>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-bold">La técnica de la expansión</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Si dice "Perro grande correr", responde ampliando: "¡Sí! El perro grande está corriendo muy rápido". Escucha el modelo correcto, no regaño.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Regla de los 10 segundos</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Cuando haces una pregunta, cuenta hasta 10 antes de volver a hablar. Su cerebro necesita ese tiempo para encontrar y sacar las palabras.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Juegos de mesa</h3>
-                        <p class="mt-3 text-slate-200 leading-relaxed">Adivina Quién, memorama o veo-veo estimulan vocabulario, turnos y descripciones sin parecer tareas escolares.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
-                <div class="mb-8">
-                    <span class="inline-flex rounded-full bg-purple-100 px-4 py-2 text-purple-800 text-sm font-semibold">En la Escuela</span>
-                </div>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Apoyo visual constante</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Todo lo hablado necesita un respaldo visual: mapas mentales, dibujos en el pizarrón, fotos. Aprende por los ojos lo que no procesa por los oídos.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Evitar lectura en voz alta grupal</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Genera ansiedad terrible. Evalúa la lectura a solas o con fragmentos cortos que haya practicado.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Instrucciones paso a paso</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Rompe las órdenes largas. Di un paso, verifica que lo hizo, y luego el siguiente.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900">Verificar comprensión discretamente</h3>
-                        <p class="mt-3 text-slate-600 leading-relaxed">En lugar de preguntar frente a todos, acércate a su lugar y dile: "Cuéntame, ¿por dónde vas a empezar?"</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-slate-900 text-slate-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="message-circle" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
-                <p class="text-sm text-slate-400">Estrategias para comprender y acompañar el trastorno del lenguaje con paciencia y recursos visuales.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
-                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
-                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        lucide.createIcons();
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        let menuAbierto = false;
-        btnMenu.addEventListener('click', () => {
-            menuAbierto = !menuAbierto;
-            menuMovil.classList.toggle('hidden', !menuAbierto);
-        });
-    </script>
-</body>
-</html>
+<body><nav class="nav" id="nav"><div class="nav-in"><a href="index.html" class="nav-lg">Psicolearning</a><ul class="nav-lk"><li><a href="#intro">Introducción</a></li><li><a href="#signos">Signos</a></li><li><a href="#barreras">Barreras</a></li><li><a href="#estrategias">Estrategias</a></li></ul><button class="nav-mb" id="btn-menu" aria-label="Abrir menú"><i data-lucide="menu" id="icono-menu"></i></button></div></nav>
+<div class="mm" id="menu-movil"><a href="#intro" class="opm">Introducción</a><a href="#signos" class="opm">Signos</a><a href="#barreras" class="opm">Barreras</a><a href="#estrategias" class="opm">Estrategias</a><a href="index.html" class="opm">Volver al Inicio</a></div><section class="hero" id="inicio"><div class="hero-bd"></div><div class="hero-ov"></div><div class="hero-ct"><span class="pg-pill">Trastorno del Lenguaje</span><h1 class="hero-hl">Las reglas invisibles del lenguaje</h1><p class="hero-sb">Es una dificultad neurobiológica que afecta la adquisición, comprensión y expresión del lenguaje. Su cerebro necesita que le enseñen explícitamente lo que otros niños absorben como una esponja.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sg);max-width:600px;margin:var(--sp-48) auto 0;text-align:left"><div class="pg-card"><h2>Reglas invisibles</h2><p>Las estructuras, tiempos verbales y conexiones lógicas del lenguaje no se absorben naturalmente.</p></div><div class="pg-card"><h2>Enseñanza explícita</h2><p>Necesitan instrucción clara, repetición y apoyos visuales para construir competencia lingüística.</p></div></div></div><div class="si"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp" startOffset="0%">SCROLL DOWN · SCROLL DOWN · </textPath></text></svg></div></section>
+<section id="intro" class="cs"><div class="ctn"><div class="content-grid fu">
+<div class="content-card"><h2>Introducción: ¿Qué es?</h2><p>Es una dificultad neurobiológica que afecta la adquisición, comprensión y expresión del lenguaje hablado o escrito.</p><p style="margin-top:var(--sp-12)">El lenguaje tiene reglas invisibles (cómo ordenar las palabras, qué significa una broma, cómo usar el pasado o el futuro). El cerebro de la mayoría de los niños absorbe estas reglas del entorno como una esponja, casi sin esfuerzo.</p><p style="margin-top:var(--sp-12)">En cambio, el cerebro de un niño con Trastorno del Lenguaje necesita que le enseñen esas reglas de forma explícita, repetitiva y con mucho apoyo visual. No se trata solo de "pronunciar mal", sino de tener problemas para armar la estructura completa de una frase o entender el mensaje.</p></div>
+<div style="display:flex;flex-direction:column;gap:var(--sg)"><div class="info-block" style="background:var(--c-obs);color:#fff;border:none"><h3 style="color:#fff">Como una esponja rota</h3><p style="color:rgba(255,255,255,.65)">Otros niños absorben el lenguaje naturalmente. Los niños con esta dificultad necesitan que le lo enseñen paso a paso.</p></div>
+<div class="info-block"><h3>No es solo pronunciación</h3><p>Van más allá de los sonidos: es la estructura, los tiempos y la lógica del mensaje.</p></div></div>
+</div></div></section>
+<section id="signos" class="cs"><div class="ctn"><div class="fu"><p class="sl">Signos y Síntomas</p><h2 class="sh sh-xs">Dificultades en la comunicación diaria</h2></div>
+<div class="signs-grid fu">
+<div class="sign-card"><h3>Vocabulario pobre</h3><p>Usa palabras generales como "eso" o "cosa" porque no encuentra la etiqueta exacta del objeto.</p></div>
+<div class="sign-card"><h3>Habla telegráfica</h3><p>Se come los conectores. Dice "Quiero parque perro" en lugar de "Quiero ir al parque con mi perro".</p></div>
+<div class="sign-card"><h3>Tiempos verbales confusos</h3><p>Confunden ayer con mañana. Dicen "Yo sabo" o "Yo rompo" a edades donde su grupo ya conjuga bien.</p></div>
+<div class="sign-card"><h3>Frustración al contar</h3><p>Tienen la idea en la cabeza pero se enredan, dan saltos de tema y no se les entiende la historia.</p></div>
+<div class="sign-card"><h3>Respuestas fuera de lugar</h3><p>Escucha palabras pero no decodifica completamente. Por eso sus respuestas parecen desconectadas.</p></div>
+</div></div></section>
+<section id="barreras" class="cs"><div class="ctn"><div class="fu"><p class="sl">Barreras Académicas</p><h2 class="sh sh-xs">La escuela está construida 100% sobre el lenguaje</h2></div>
+<div class="barriers-grid fu">
+<div class="barrier-card"><h3>Lectoescritura</h3><p>La lectura es lenguaje pintado. Si no domina el hablado, la lectoescritura será una montaña empinada.</p></div>
+<div class="barrier-card"><h3>Problemas razonados</h3><p>En matemáticas, pueden sumar perfecto, pero el enunciado "Juanita tenía 5 manzanas..." los confunde y no saben qué operación hacer.</p></div>
+<div class="barrier-card"><h3>Instrucciones complejas</h3><p>Si la maestra dice varios pasos, se pierden a la mitad de la frase.</p></div>
+<div class="barrier-card"><h3>Aislamiento en el juego</h3><p>En el recreo, los niños hablan muy rápido e inventan reglas al momento. No procesa lo suficientemente rápido y es hecho a un lado.</p></div>
+</div></div></section>
+<section class="cs"><div class="ctn"><div class="fu" style="display:flex;flex-direction:column;align-items:center;gap:var(--sp-28)">
+<a href="trastorno-habla.html" class="pill pill-d">Conoce también: Trastorno del Habla</a>
+<a href="trastorno-fluidez.html" class="pill pill-d">Conoce también: Trastorno de la Fluidez</a>
+<a href="trastorno-comunicacion.html" class="pill pill-d">Conoce también: Trastorno de la Comunicación</a>
+</div></div></section>
+<section id="estrategias" class="cs"><div class="ctn"><div class="fu"><p class="sl">Estrategias</p><h2 class="sh sh-xs">Cómo apoyar en casa y en la escuela</h2></div>
+<div class="strategy-pair fu">
+<div class="strategy-dark"><span class="tag">En Casa</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>La técnica de la expansión</h3><p>Si dice "Perro grande correr", responde ampliando: "¡Sí! El perro grande está corriendo muy rápido". Escucha el modelo correcto, no regaño.</p></div>
+<div><h3>Regla de los 10 segundos</h3><p>Cuando haces una pregunta, cuenta hasta 10 antes de volver a hablar. Su cerebro necesita ese tiempo para encontrar y sacar las palabras.</p></div>
+<div><h3>Juegos de mesa</h3><p>Adivina Quién, memorama o veo-veo estimulan vocabulario, turnos y descripciones sin parecer tareas escolares.</p></div>
+</div></div>
+<div class="strategy-light"><span class="tag" style="background:var(--c-obs);color:#fff">En la Escuela</span><div style="display:flex;flex-direction:column;gap:var(--sp-48)">
+<div><h3>Apoyo visual constante</h3><p>Todo lo hablado necesita un respaldo visual: mapas mentales, dibujos en el pizarrón, fotos. Aprende por los ojos lo que no procesa por los oídos.</p></div>
+<div><h3>Evitar lectura en voz alta grupal</h3><p>Genera ansiedad terrible. Evalúa la lectura a solas o con fragmentos cortos que haya practicado.</p></div>
+<div><h3>Instrucciones paso a paso</h3><p>Rompe las órdenes largas. Di un paso, verifica que lo hizo, y luego el siguiente.</p></div>
+<div><h3>Verificar comprensión discretamente</h3><p>En lugar de preguntar frente a todos, acércate a su lugar y dile: "Cuéntame, ¿por dónde vas a empezar?"</p></div>
+</div></div>
+</div></div></section>
+<footer class="ft"><div class="ctn"><div class="fg"><div><h3>Psicolearning</h3><p>Estrategias para comprender y acompañar el trastorno del lenguaje con paciencia y recursos visuales.</p></div><div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="index.html#estrategias">Recursos</a></li><li><a href="index.html#mexico">Contexto México</a></li><li><a href="index.html#rol">Rol del Psicólogo</a></li></ul></div><div><h4>Contacto</h4><p>Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p></div></div><div class="fbt">&copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.</div></div></footer><script>
+lucide.createIcons();
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
+const btnMenu=document.getElementById('btn-menu'),mm=document.getElementById('menu-movil');let ma=false;
+btnMenu.addEventListener('click',()=>{ma=!ma;if(ma){mm.classList.add('open');btnMenu.innerHTML='<i data-lucide="x" id="icono-menu"></i>'}else{mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>'}lucide.createIcons()});
+document.querySelectorAll('.opm').forEach(e=>{e.addEventListener('click',()=>{ma=false;mm.classList.remove('open');btnMenu.innerHTML='<i data-lucide="menu" id="icono-menu"></i>';lucide.createIcons()})});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+</script></body></html>
