@@ -40,8 +40,8 @@ app.post('/api/search', async (req, res) => {
           }
         ],
         temperature: 0.7,
-        max_tokens: 200,
-        reasoning_format: 'hidden'
+        max_tokens: 300,
+        reasoning_effort: 'none'
       })
     });
 
